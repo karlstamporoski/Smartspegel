@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    
+}
+
+
+#MoveWidget {
+    position: absolute;
+    z-index: 9;
+    color:white;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid white;
+    padding:10px,200px,10px,200px;
+    text-align: center;
+}
+
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+
+#date{
+    color:white
+}
