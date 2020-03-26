@@ -1,4 +1,11 @@
 # Smartspegel
-grupp4
-Hej //Mattias
-Hello//Mohamud
+grupp 01
+
+"Mirror-Mirror" projekt
+Medlemmar: 
+Karl 
+Mattis
+Josefine
+Arian 
+Mohamud
+ 
