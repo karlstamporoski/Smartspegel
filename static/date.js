@@ -6,16 +6,16 @@ function startDate() {
     var month = today.getUTCMonth();
     var day = today.getDay();
     var date = today.getDate();
-    month = checkMonth(month);
-    day = checkDay(day);
+    month = getMonth(month);
+    day = getDay(day);
     document.getElementById('CurrentDate').innerHTML = day + " " + date + " " + month; // Connects to html, displays formatting
     }
 
 
-function checkMonth(i) {
-    switch(i) {
+function getMonth(month) {
+    switch(month) {
         case 0:
-          return "jan";
+          return "Jan";
         case 1:
             return "Feb";
         case 2:
@@ -42,10 +42,10 @@ function checkMonth(i) {
 }
 
 
-function checkDay(d) {
-    switch(d){
+function getDay(day) {
+    switch(day){
         case 0:
-            return "sön"
+            return "Sön"
         case 1:
             return "Mån"
         case 2:
@@ -57,7 +57,7 @@ function checkDay(d) {
         case 5:
             return "Fre"
         case 6:
-            return "lör"
+            return "Lör"
     }
 
 }

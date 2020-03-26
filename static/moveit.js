@@ -1,11 +1,11 @@
-dragElement(document.getElementById("MoveWidget")); //Fetches id from html to load it on
+dragElement(document.querySelector(".MoveWidget")); //Fetches id from html to load it on
 
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.querySelector(elmnt.id + ".header")) {
     //Moves the window from the header if it exists
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.querySelector(elmnt.id + ".header").onmousedown = dragMouseDown;
   } else {
     //If not move it from anywhere
     elmnt.onmousedown = dragMouseDown;
