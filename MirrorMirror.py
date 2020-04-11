@@ -3,7 +3,7 @@ import psycopg2
 
 
 @route("/")
-def Home_page():
+def home_page():
     return template("index")
 
 
@@ -14,9 +14,9 @@ def static_files(filename):
 
 @route("/api/calendar")
 def cal():
-# Creates a monthly calendar with current date and local weekday names
-# Provides calendar data with the help of JSON
-# Reference: https://docs.python.org/3/library/calendar.html
+    # Creates a monthly calendar with current date and local weekday names
+    # Provides calendar data with the help of JSON
+    # Reference: https://docs.python.org/3/library/calendar.html
 
     import calendar
     import json
@@ -31,7 +31,7 @@ def cal():
     cal = {
         "calendarHTML": c.formatmonth(year, month),
         "entries": [
-                {
+            {
                 "title": "Klippa mig",
                 "when": "Idag",
                 "time": "13:50-14:20",
@@ -58,7 +58,7 @@ def cal():
         ]
     }
     response.content_type = 'application/json'
-    return json.dumps(cal) 
+    return json.dumps(cal)
 
- 
-run(host='localhost', port=8080)
+
+run(reloader=True, host="localhost", port=8080)
