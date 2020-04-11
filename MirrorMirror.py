@@ -12,4 +12,4 @@ def static_files(filename):
     return static_file(filename, root="static")
 
  
-run(host='localhost', port=8080)
+run(reloader=True, host='localhost', port=8080)
