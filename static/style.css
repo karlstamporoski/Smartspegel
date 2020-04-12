@@ -8,6 +8,29 @@ body h1 {
     font-weight: bold;
 }
 
+.MoveWidget {
+    position: absolute;
+    z-index: 9;
+    color:white;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid white;
+    padding:10px,200px,10px,200px;
+    text-align: center;
+}
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+#date{
+    color:white
+}
+
 /* Nyhets-widget: Wrap runt */ 
 .rss-wrap {
     border-top: 2px solid white;

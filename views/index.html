@@ -3,10 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title></title>
+    <link href="/static/style.css" rel="stylesheet">
+    <title>Mirror Mirror</title>
 </head>
-<body>  
+<body> 
+    <main>
+        <div class="MoveWidget">
+            <div id="CurrentTime"></div>
+            <div id="CurrentDate"></div>
+        </div> 
+        <div class="MoveWidget" style="right:0; bottom: 0">
+            <div class="CalenderWidget"></div>
+        </div>
+    </main>
+    <script src="/static/moveit.js" defer></script>
+    <script src="/static/time.js" defer></script>
+    <script src="/static/date.js" defer></script>
+    <script src="/static/calender.js" defer></script>
+    
     <div class="Nyhetswidget">
         <h1>Nyheter</h1>
       </div>
