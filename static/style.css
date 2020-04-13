@@ -28,3 +28,12 @@ body{
 #date{
     color:white
 }
+
+.MoveOne{
+    border: 1px solid white;
+    color: white;
+    width: 50%;
+    z-index: -1;
+    position: absolute;
+   
+}

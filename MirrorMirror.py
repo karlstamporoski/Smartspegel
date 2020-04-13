@@ -1,5 +1,5 @@
 from bottle import route, run, template, static_file
-import psycopg2
+
 
 
 @route("/")
