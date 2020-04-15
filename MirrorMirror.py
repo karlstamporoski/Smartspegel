@@ -1,6 +1,5 @@
 
 from bottle import route, run, template, static_file, response
-import psycopg2
 import calendar
 import json
 from datetime import date
