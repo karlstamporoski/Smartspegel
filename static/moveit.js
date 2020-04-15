@@ -1,46 +1,74 @@
-dragElement(document.querySelector(".MoveWidget")); //Fetches id from html to load it on
+var container = document.querySelector("#container");
+    var activeItem = null;
 
+    var active = false;
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.querySelector(elmnt.id + ".header")) {
-    //Moves the window from the header if it exists
-    document.querySelector(elmnt.id + ".header").onmousedown = dragMouseDown;
-  } else {
-    //If not move it from anywhere
-    elmnt.onmousedown = dragMouseDown;
-  }
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
 
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-     // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+    function dragStart(e) {
 
+      if (e.target !== e.currentTarget) {
+        active = true;
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-     // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
+        // this is the item we are interacting with
+        activeItem = e.target;
 
+        if (activeItem !== null) {
+          if (!activeItem.xOffset) {
+            activeItem.xOffset = 0;
+          }
 
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
+          if (!activeItem.yOffset) {
+            activeItem.yOffset = 0;
+          }
+
+          if (e.type === "touchstart") {
+            activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+            activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
+          } else {
+            console.log("doing something!");
+            activeItem.initialX = e.clientX - activeItem.xOffset;
+            activeItem.initialY = e.clientY - activeItem.yOffset;
+          }
+        }
+      }
+    }
+
+    function dragEnd(e) {
+      if (activeItem !== null) {
+        activeItem.initialX = activeItem.currentX;
+        activeItem.initialY = activeItem.currentY;
+      }
+
+      active = false;
+      activeItem = null;
+    }
+
+    function drag(e) {
+      if (active) {
+        if (e.type === "touchmove") {
+          e.preventDefault();
+
+          activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+          activeItem.currentY = e.touches[0].clientY - activeItem.initialY;
+        } else {
+          activeItem.currentX = e.clientX - activeItem.initialX;
+          activeItem.currentY = e.clientY - activeItem.initialY;
+        }
+
+        activeItem.xOffset = activeItem.currentX;
+        activeItem.yOffset = activeItem.currentY;
+
+        setTranslate(activeItem.currentX, activeItem.currentY, activeItem);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
