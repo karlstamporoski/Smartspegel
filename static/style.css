@@ -1,19 +1,7 @@
 body{
     background-color: black;
-    
 }
 
-#container{
-    width:100%;
-    height:967px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 7px;
-    touch-action: none;
-
-}
 
 .MoveOne{
     border: 1px solid white;
@@ -34,4 +22,55 @@ body{
     background: blueviolet;
     width: 70%;
   
+}
+
+#date{
+    color:white
+}
+
+/* Nyhets-widget: Wrap runt */ 
+.rss-wrap {
+    border-top: 2px solid white;
+    width: 540px;
+    height: 200px;
+    box-sizing: border-box;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* Nyhets-widget: Widgetbox med animation */ 
+.rss-box {
+    width: 540px;
+    animation: nyheter 30s infinite linear;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+}
+@keyframes nyheter {
+    to {
+        transform: translateY(-100%);
+        }
+}
+
+/* Nyhets-widget: Style för rss-feed */ 
+.rss-box a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}     
+.rss-box li {
+    font-size: 12px;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted white;
+}
+.rss-box ul {
+    margin-left: 0px;
+    padding: 0px;
+}
+/* Nyhets-widget: On mouse-over paus */ 
+.rss-box:hover {
+    animation-play-state: paused;
 }
