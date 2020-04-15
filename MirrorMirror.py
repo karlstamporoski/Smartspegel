@@ -1,7 +1,9 @@
 
 from bottle import route, run, template, static_file, response
 import psycopg2
-
+import calendar
+import json
+from datetime import date
 
 
 @route("/")
@@ -20,9 +22,6 @@ def cal():
     # Provides calendar data with the help of JSON
     # Reference: https://docs.python.org/3/library/calendar.html
 
-    import calendar
-    import json
-    from datetime import date
 
     today = date.today()
     year = int(today.strftime("%Y"))
