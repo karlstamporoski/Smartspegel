@@ -21,7 +21,6 @@ def cal():
     # Provides calendar data with the help of JSON
     # Reference: https://docs.python.org/3/library/calendar.html
 
-
     today = date.today()
     year = int(today.strftime("%Y"))
     month = int(today.strftime("%m"))
