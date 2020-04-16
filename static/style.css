@@ -15,24 +15,29 @@ body{
     touch-action: none;
     z-index: -10;
 }
+
 .Timedatewrapper{
     width: 7%;
-    background: #333;
-   
 }
-.Nyhetswrapper{
-    background: #333;
+
+.Nyhetswidget{
+    pointer-events: none;
 }
+
 .CalenderWidget{
-    background: #333;
+    
     width: 250px;
+    pointer-events: none;
 }
+
 #CurrentTime{
     width: 70%;
+    pointer-events: none;
 }
 
 #CurrentDate{
     width: 70%;
+    pointer-events: none;
   
 }
 
@@ -50,7 +55,6 @@ body{
 .rss-box {
     width: 540px;
     animation: nyheter 30s infinite linear;
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
 }
@@ -62,10 +66,10 @@ body{
 
 /* Nyhets-widget: Style för rss-feed */ 
 .rss-box a {
-    color: white;
     font-size: 14px;
     font-weight: bold;
-}     
+}
+    
 .rss-box li {
     font-size: 12px;
     list-style: none;
@@ -74,11 +78,14 @@ body{
     margin-bottom: 10px;
     border-bottom: 1px dotted white;
 }
+
 .rss-box ul {
     margin-left: 0px;
     padding: 0px;
 }
+
 /* Nyhets-widget: On mouse-over paus */ 
 .rss-box:hover {
     animation-play-state: paused;
 }
+
