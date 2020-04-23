@@ -1,4 +1,3 @@
-
 from bottle import route, run, template, static_file, response
 import calendar
 import json
