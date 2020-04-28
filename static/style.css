@@ -1,5 +1,6 @@
-body{
+body {
     background-color: black;
+<<<<<<< Updated upstream
 }
 body h2 {
     font-family: Arial, Helvetica, sans-serif;
@@ -29,49 +30,129 @@ body h2 {
 
 #date{
     color:white
+=======
+    color:white;
 }
 
-/* Nyhets-widget: Wrap runt */ 
-.rss-wrap {
-    border-top: 2px solid white;
-    width: 540px;
-    height: 200px;
-    box-sizing: border-box;
-    position: absolute;
+#container {
+    width: 100%;
+    height: 960px;
+    color:white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    border-radius: 7px;
+    touch-action: none;
+    z-index: -10;
+}
+
+.Timedatewrapper {
+    width: 7%;
+}
+
+.Nyhetswrapper {
+    pointer-events: none;
+}
+
+.CalenderWidget {
+    width: 250px;
+    pointer-events: none;
+}
+
+#CurrentTime {
+    width: 70%;
+    pointer-events: none;
+}
+
+#CurrentDate {
+    width: 70%;
+    pointer-events: none;
+  
+>>>>>>> Stashed changes
 }
 
 /* Nyhets-widget: Widgetbox med animation */ 
 .rss-box {
     width: 540px;
+<<<<<<< Updated upstream
     animation: nyheter 30s infinite linear;
     color: white;
+=======
+>>>>>>> Stashed changes
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-}
-@keyframes nyheter {
-    to {
-        transform: translateY(-100%);
-        }
+
 }
 
+@keyframes nyheter {
+    to {transform: translateY(-100%);}
+}
 /* Nyhets-widget: Style för rss-feed */ 
+<<<<<<< Updated upstream
 .rss-box a {
     color: white;
     font-size: 14px;
     font-weight: bold;
 }     
+=======
+
+.rss-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 540px;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    color: white;
+}
+
+.rss-title :last-child {
+        border-bottom: 2px solid white;
+}
+
+.rss-title a {
+    text-decoration: none;
+}
+
+.rss-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    display: block;
+    width: 540px;
+}
+
+.rss-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.rss-box ul {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding: 0px;
+    z-index: -1;
+    animation: nyheter 5s infinite;
+}
+
+>>>>>>> Stashed changes
 .rss-box li {
     font-size: 12px;
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px dotted white;
+    text-decoration: none;
 }
+<<<<<<< Updated upstream
 .rss-box ul {
     margin-left: 0px;
     padding: 0px;
+=======
+>>>>>>> Stashed changes
 }
 /* Nyhets-widget: On mouse-over paus */ 
 .rss-box:hover {
