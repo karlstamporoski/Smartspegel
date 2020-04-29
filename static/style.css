@@ -67,13 +67,14 @@ body {
     width: 540px;
     height: 20px;
     margin: 0px;
-    padding: 0px;
+    padding-bottom: 5px;
     position: absolute;
     z-index: 1;
     pointer-events: none;
     cursor: default;
     text-decoration: none;
     font-size: 20px;
+    height: 30px;
 }
 
 .rss-box a {
