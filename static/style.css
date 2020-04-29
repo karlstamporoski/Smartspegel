@@ -17,6 +17,7 @@ body {
 
 .Timedatewrapper{
     width: 7%;
+    user-select: none;
 }
 
 .Nyhetswidget{
@@ -26,6 +27,7 @@ body {
 .CalenderWidget{
     width: 250px;
     pointer-events: none;
+    user-select: none;
 }
 
 #CurrentTime{
