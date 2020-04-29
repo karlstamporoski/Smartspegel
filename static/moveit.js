@@ -1,4 +1,4 @@
-dragElement(document.querySelector(".MoveWidget")); //Fetches id from html to load it on
+dragElement(document.querySelector("#container")); //Fetches id from html to load it on
 
 
 function dragElement(elmnt) {

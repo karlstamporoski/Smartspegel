@@ -8,7 +8,7 @@ body h2 {
     font-weight: bold;
 }
 
-.MoveWidget {
+#container {
     position: absolute;
     z-index: 9;
     color:white;
@@ -92,7 +92,7 @@ body h2 {
 }
 
 /* Nyhets-widget: On mouse-over paus */ 
-.rss-box:hover {
+.rss-box ul:hover {
     animation-play-state: paused;
 }
 /* Nyhets-widget: Slut */ 
