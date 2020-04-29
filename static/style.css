@@ -1,6 +1,7 @@
 body {
     background-color: black;
-    color:white;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #container{
@@ -24,7 +25,7 @@ body {
     pointer-events: none;
 }
 
-.CalenderWidget{
+.CalendarWidget{
     width: 250px;
     pointer-events: none;
     user-select: none;
@@ -53,15 +54,12 @@ body {
 /* Nyhets-widget: Widgetbox med animation */ 
 .rss-box {
     width: 540px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     pointer-events: none;
 }
 
 /* Nyhets-widget: Rubrik */ 
 .rss-title {
-    font-family: Arial, Helvetica, sans-serif;
     border-bottom: 1px solid white;
     overflow: hidden;
     box-sizing: border-box;

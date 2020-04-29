@@ -7,6 +7,6 @@ fetch("/api/calendar")
         json.entries.forEach(elem => {
             output += `${elem.day} ${elem.title} <br> ${elem.when} ${elem.time} <br>`;
         })
-        var cal = document.querySelector('.CalenderWidget');
+        var cal = document.querySelector('.CalendarWidget');
         cal.innerHTML = output
     });
