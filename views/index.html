@@ -6,37 +6,30 @@
     <link href="/static/style.css" rel="stylesheet">
     <title>Mirror Mirror</title>
 </head>
-<body>
-<main id="container">
+    <body>
+    <main id="container">
 
-    <div class="Timedatewrapper">
-        <div id="CurrentTime"></div>
-        <div id="CurrentDate"></div>
-    </div>
-    
-    <div class="test">
-    <div class="CalenderWidget"></div>
-    </div>
-
-    <div class="Nyhetswrapper">
-        <div class="Nyhetswidget">
-            <h1>Nyheter</h1>
+        <div class="Timedatewrapper">
+            <div id="CurrentTime"></div>
+            <div id="CurrentDate"></div>
         </div>
-        <div class="rss-wrap">
+        
+        <div class="test">
+        <div class="CalenderWidget"></div>
+        </div>
+        <div class="Newswrapper">
             <div class="rss-box">
-                <script language="JavaScript" src="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&num=6&desc=1&utf=y"  charset="UTF-8" type="text/javascript">
+                <script language="JavaScript" src="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&chan=title&num=7&desc=1&utf=y"  charset="UTF-8" type="text/javascript">
                 </script>
-                <noscript><!-- Om webbläsare saknar javascript -->
-                    <a href="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&num=6&desc=1&utf=y&html=y">View RSS feed</a>
+                <noscript>
+                    <a href="http://feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&chan=title&num=7&desc=1&utf=y&html=y">View RSS feed</a>
                 </noscript>
             </div>
         </div>
-    </div>
-</main>
-<script src="/static/moveit.js" defer></script>
-<script src="/static/time.js" defer></script>
-<script src="/static/date.js" defer></script>
-<script src="/static/calender.js" defer></script>
-
-</body>
+    </main>
+    <script src="/static/moveit.js" defer></script>
+    <script src="/static/time.js" defer></script>
+    <script src="/static/date.js" defer></script>
+    <script src="/static/calender.js" defer></script>
+    </body>
 </html>

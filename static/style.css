@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
     color:white;
 }
@@ -41,12 +41,11 @@ body{
   
 }
 
-/* Nyhets-widget: Wrap runt */ 
-.rss-wrap {
-    border-top: 2px solid white;
+.Newswrapper {
+    margin: 0px;
+    padding: 0px;
     width: 540px;
     height: 200px;
-    box-sizing: border-box;
     position: absolute;
     overflow: hidden;
 }
@@ -54,38 +53,56 @@ body{
 /* Nyhets-widget: Widgetbox med animation */ 
 .rss-box {
     width: 540px;
-    animation: nyheter 30s infinite linear;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
 }
-@keyframes nyheter {
-    to {
-        transform: translateY(-100%);
-        }
+
+/* Nyhets-widget: Rubrik */ 
+.rss-title {
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: black;
+    width: 540px;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-/* Nyhets-widget: Style för rss-feed */ 
 .rss-box a {
-    font-size: 14px;
+    color: white;
     font-weight: bold;
-}
-    
+} 
+
 .rss-box li {
-    font-size: 12px;
-    list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    font-size: 14px;
     border-bottom: 1px dotted white;
 }
 
+/* Nyhets-widget: Sektion med autoscrool */ 
 .rss-box ul {
     margin-left: 0px;
     padding: 0px;
+    animation: nyheter 30s infinite linear;
+}
+
+@keyframes nyheter {
+    to {transform: translateY(-100%);}
 }
 
 /* Nyhets-widget: On mouse-over paus */ 
-.rss-box:hover {
+.rss-box ul:hover {
     animation-play-state: paused;
 }
-
+/* Nyhets-widget: Slut */ 
