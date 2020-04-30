@@ -30,6 +30,17 @@ body {
     pointer-events: none;
     user-select: none;
 }
+.CalendarWidget td {
+    text-align: center;
+}
+
+.CalendarWidget table.month tbody tr th.mon, th.tue, th.wed, th.thu, th.fri, th.sat, th.sun{
+    border-bottom: 1px solid white;
+}
+
+.CalendarWidget table {
+    border-bottom: 1px solid white;
+}
 
 #CurrentTime{
     width: 70%;

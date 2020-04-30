@@ -2,6 +2,9 @@ from bottle import route, run, template, static_file, response
 import calendar
 import json
 from datetime import date
+from ics import Calendar
+import requests
+import arrow
 
 
 @route("/")
@@ -26,37 +29,26 @@ def cal():
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
 
+    url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group.calendar.google.com/public/basic.ics"
+    gc = Calendar(requests.get(url).text)
+
+    entries = []
+
+    for event in gc.events:
+        entries.append({
+            "title": event.name,
+            "when": "Idag",
+            "time": "14:30-15:00",
+            "day": "8"
+        })
+
     cal = {
         "calendarHTML": c.formatmonth(year, month),
-        "entries": [
-            {
-                "title": "Klippa mig",
-                "when": "Idag",
-                "time": "13:50-14:20",
-                "day": "8"
-            },
-            {
-                "title": "Klippa hunden",
-                "when": "Imorgon",
-                "time": "13:50-14:20",
-                "day": "9"
-            },
-            {
-                "title": "Klippa min kompis",
-                "when": "I övermorgon",
-                "time": "13:50-14:20",
-                "day": "10"
-            },
-            {
-                "title": "Klippa någon annan",
-                "when": "I övermorgon",
-                "time": "14:50-15:20",
-                "day": "15"
-            }
-        ]
+        "entries": entries
     }
     response.content_type = 'application/json'
     return json.dumps(cal)
+
 
 
 run(reloader=True, host="localhost", port=8080)
