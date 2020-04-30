@@ -8,14 +8,14 @@ Medlemmar: Karl, Mattias, Josefine, Arian, Mohamud
 Det går att flytta på widgets genom att trycka på dem och dra de till vald plats.
 
 #### Beroenden
-Kör detta i terminalen så får ni hem alla Pythonbibliotek som behövs 
-för att köra MirrorMirror.py
+cd till katalogen där requirements.txt finns och kör sen i terminalen 
 ```
 pip install -r requirements.txt
 ```
+så får ni hem alla Pythonbibliotek som behövs för att köra MirrorMirror.py
 
 Öppna sen filen MirrorMirror.py i ex. IDLE
-Välj sen RUN eller tryck F5 för att starta
-i webbläsare gå till : http://localhost:8080
+Välj RUN eller tryck F5 för att starta.
+I webbläsare gå till : http://localhost:8080
 
 
