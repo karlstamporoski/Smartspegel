@@ -1,7 +1,7 @@
 # Mirror Mirror
 Grupp 01
 
-####Projekt Smart Spegel
+#### Projekt Smart Spegel
 Medlemmar: Karl, Mattias, Josefine, Arian, Mohamud
 
 #### Rörlighets funktion
