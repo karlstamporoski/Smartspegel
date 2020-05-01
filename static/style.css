@@ -139,22 +139,22 @@ body {
 }
 
 /* Styling for current day in calendar events - currently under construction*/
-
 .eventSummary {
     border: 1px solid white;
     width: 42px;
 }
 
-.eventDay {
-    font-size: 21px;
-    margin: auto;
-}
-
 .eventMonth {
     font-size: 12px;
+    font-weight: bold;
     color: black;
     background-color: white;
     text-align: center;
+}
+
+.eventDay {
+    font-size: 21px;
+    margin: auto;
 }
 
 .eventWhenTime {

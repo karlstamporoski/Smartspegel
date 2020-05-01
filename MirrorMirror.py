@@ -16,6 +16,24 @@ def static_files(filename):
     return static_file(filename, root="static")
 
 
+def en_to_swe(english):
+    # Translates english to swedish from humanize
+    # Arrow doesn't support swedish week in humanize
+    # Pull request made to Arrow repository
+    # https://github.com/crsmithdev/arrow/pull/780
+
+    english = english.replace(" a ", " en ")
+    english = english.replace("a ", "en ")
+    english = english.replace("in", "om")
+    english = english.replace("weeks", "veckor")
+    english = english.replace("week", "vecka")
+    english = english.replace("day", "dag")
+    english = english.replace("ago", "sedan")
+    english = english.replace("hours", "timmar")
+
+    return english
+
+
 def month_to_str(mid):
     # Converts monthly number to monthly name
 
@@ -79,13 +97,14 @@ def cal():
         start = event.begin.format("HH:mm")
         end = event.end.format("HH:mm")
         if event.all_day:
-            start = "Hel"
-            end = "Dag"
+            time = "Heldag"
+        else:
+            time = f"{start} - {end}"
 
         entries.append({
             "title": event.name,
-            "when": event.begin.humanize(),
-            "time": f"{start} - {end}",
+            "when": en_to_swe(event.begin.humanize()),
+            "time": time,
             "month": month_to_str(event.begin.datetime.month),
             "day": event.begin.datetime.day
         })
