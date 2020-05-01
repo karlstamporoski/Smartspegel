@@ -25,23 +25,6 @@ body {
     pointer-events: none;
 }
 
-.CalendarWidget{
-    width: 250px;
-    pointer-events: none;
-    user-select: none;
-}
-.CalendarWidget td {
-    text-align: center;
-}
-
-.CalendarWidget table.month tbody tr th.mon, th.tue, th.wed, th.thu, th.fri, th.sat, th.sun{
-    border-bottom: 1px solid white;
-}
-
-.CalendarWidget table {
-    border-bottom: 1px solid white;
-}
-
 #CurrentTime{
     width: 70%;
     pointer-events: none;
@@ -116,4 +99,50 @@ body {
 .rss-box ul:hover {
     animation-play-state: paused;
 }
-/* Nyhets-widget: Slut */ 
+/* Nyhets-widget: Slut */
+
+/* CalendarWidget: START */
+.CalendarWidget{
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Removes month and year header from the Python calendarHTML */
+.CalendarWidget table.month tbody tr th.month{
+    display: none;
+}
+
+/* Places a border-bottom under each weekday */
+.CalendarWidget table.month th.mon,
+.CalendarWidget table.month th.tue,
+.CalendarWidget table.month th.wed,
+.CalendarWidget table.month th.thu,
+.CalendarWidget table.month th.fri,
+.CalendarWidget table.month th.sat,
+.CalendarWidget table.month th.sun{
+    border-bottom: 1px solid white;
+    font-size: 21px;
+}
+
+/* Places a border-bottom under the monthly calendar + sets the width of the calendarwidget*/
+.CalendarWidget table {
+    width: 250px;
+    border-bottom: 2px solid white;
+    margin: 0px 0px 5px 0px;
+}
+
+/* Styling for each date in the monthly calendar*/
+.CalendarWidget td {
+    text-align: center;
+    padding: 5px;
+    font-size: 21px;
+}
+
+/* Styling for current day in calendar events - currently under construction*/
+.day {
+    padding: 5px;
+    font-size: 21px;
+    color: red;
+    background: green;
+}
+/* CalendarWidget: END */

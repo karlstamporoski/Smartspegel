@@ -5,7 +5,10 @@ fetch("/api/calendar")
     .then((json) => {
         var output = json.calendarHTML;
         json.entries.forEach(elem => {
-            output += `${elem.day} ${elem.title} <br> ${elem.when} ${elem.time} <br>`;
+            output += `<div class="day">${elem.day}</div>
+            <div class="title">${elem.title}</div>
+            <div class="when">${elem.when}</div>
+            <div class="time">${elem.time}</div>`;
         })
         var cal = document.querySelector('.CalendarWidget');
         cal.innerHTML = output

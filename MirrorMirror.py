@@ -20,14 +20,24 @@ def static_files(filename):
 @route("/api/calendar")
 def cal():
     # Creates a monthly calendar with current date and local weekday names
-    # Provides calendar data with the help of JSON
     # Reference: https://docs.python.org/3/library/calendar.html
+    # Provides calendar data from a public Google Calendar .ics file
+    # with the help of ics.py and JSON
+    # Reference: https://icspy.readthedocs.io/en/stable/
 
     today = date.today()
     year = int(today.strftime("%Y"))
     month = int(today.strftime("%m"))
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
+    calHTML = c.formatmonth(year, month)
+    calHTML = calHTML.replace("Mån", "Må")
+    calHTML = calHTML.replace("Tis", "Ti")
+    calHTML = calHTML.replace("Ons", "On")
+    calHTML = calHTML.replace("Tor", "To")
+    calHTML = calHTML.replace("Fre", "Fr")
+    calHTML = calHTML.replace("Lör", "Lö")
+    calHTML = calHTML.replace("Sön", "Sö")
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group.calendar.google.com/public/basic.ics"
     gc = Calendar(requests.get(url).text)
@@ -43,12 +53,11 @@ def cal():
         })
 
     cal = {
-        "calendarHTML": c.formatmonth(year, month),
+        "calendarHTML": calHTML,
         "entries": entries
     }
     response.content_type = 'application/json'
     return json.dumps(cal)
-
 
 
 run(reloader=True, host="localhost", port=8080)
