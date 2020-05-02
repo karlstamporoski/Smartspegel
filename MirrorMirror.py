@@ -94,8 +94,8 @@ def cal():
     month = int(today.strftime("%m"))
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
-    cal_html = three_to_two(c.formatmonth(year, month))         # I will change three_to_two into something smarter
-    cal_html = cal_html.replace(f">{day}<", f">*{day}*<")
+    cal_html = three_to_two(c.formatmonth(year, month))
+    cal_html = cal_html.replace(f">{day}<", f"><div class='current'>{day}</div><")     # Marks the current day
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
           "calendar.google.com/public/basic.ics"

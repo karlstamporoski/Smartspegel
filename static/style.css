@@ -174,4 +174,11 @@ body {
 .eventDetails {
     margin-left: 8px;
 }
+
+.current {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+}
 /* CalendarWidget: END */
