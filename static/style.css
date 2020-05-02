@@ -128,7 +128,7 @@ body {
 .CalendarWidget table {
     width: 250px;
     border-bottom: 2px solid white;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 8px 0px;
 }
 
 /* Styling for each date in the monthly calendar*/
@@ -139,7 +139,14 @@ body {
 }
 
 /* Styling for current day in calendar events - currently under construction*/
+.event {
+    display: flex;
+    margin-bottom: 10px;
+}
+
 .eventSummary {
+    display: flex;
+    flex-direction: column;
     border: 1px solid white;
     width: 42px;
 }
@@ -161,14 +168,6 @@ body {
     font-size: 14px;
     }
 
-.event {
-    display: flex;
-    margin-bottom: 10px;
-}
-.eventSummary {
-    display: flex;
-    flex-direction: column;
-}
 .eventDetails {
     margin-left: 8px;
 }

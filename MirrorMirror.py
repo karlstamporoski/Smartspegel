@@ -23,8 +23,9 @@ def en_to_swe(english):
     # https://github.com/crsmithdev/arrow/pull/780
 
     english = english.replace(" a ", " en ")
-    english = english.replace("a ", "en ")
-    english = english.replace("in", "om")
+    english = english.replace("a ", "En ")
+    english = english.replace("in", "Om")
+    english = english.replace("month", "månad")
     english = english.replace("weeks", "veckor")
     english = english.replace("week", "vecka")
     english = english.replace("day", "dag")
@@ -34,8 +35,22 @@ def en_to_swe(english):
     return english
 
 
+def three_to_two(cal_html):
+    # Replaces three letters with two for weekday names
+
+    cal_html = cal_html.replace("Mån", "Må")
+    cal_html = cal_html.replace("Tis", "Ti")
+    cal_html = cal_html.replace("Ons", "On")
+    cal_html = cal_html.replace("Tor", "To")
+    cal_html = cal_html.replace("Fre", "Fr")
+    cal_html = cal_html.replace("Lör", "Lö")
+    cal_html = cal_html.replace("Sön", "Sö")
+
+    return cal_html
+
+
 def month_to_str(mid):
-    # Converts monthly number to monthly name
+    # Converts month number to month name
 
     if mid == 1:
         return "Jan"
@@ -78,14 +93,7 @@ def cal():
     month = int(today.strftime("%m"))
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
-    cal_html = c.formatmonth(year, month)
-    cal_html = cal_html.replace("Mån", "Må")
-    cal_html = cal_html.replace("Tis", "Ti")
-    cal_html = cal_html.replace("Ons", "On")
-    cal_html = cal_html.replace("Tor", "To")
-    cal_html = cal_html.replace("Fre", "Fr")
-    cal_html = cal_html.replace("Lör", "Lö")
-    cal_html = cal_html.replace("Sön", "Sö")
+    cal_html = three_to_two(c.formatmonth(year, month))
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
           "calendar.google.com/public/basic.ics"
@@ -106,8 +114,11 @@ def cal():
             "when": en_to_swe(event.begin.humanize()),
             "time": time,
             "month": month_to_str(event.begin.datetime.month),
-            "day": event.begin.datetime.day
+            "day": event.begin.datetime.day,
+            "timestamp": event.begin.timestamp
         })
+
+    entries.sort(key=lambda item: item.get("timestamp"))
 
     cal_content = {
         "calendarHTML": cal_html,
