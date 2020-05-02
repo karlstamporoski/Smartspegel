@@ -13,7 +13,7 @@ fetch("/api/calendar")
                 </div>
                 <div class="eventDetails">
                     <div class="eventTitle">${elem.title}</div>
-                    <div class="eventWhenTime">${elem.when}  ${elem.time}</div>
+                    <div class="eventWhenTime">${elem.time} &nbsp; &nbsp;${elem.when}</div>
                 </div>
             </div>
             `;
