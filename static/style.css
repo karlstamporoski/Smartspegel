@@ -32,7 +32,7 @@ body {
 #CurrentDate{
     pointer-events: none;
     font-size: 21px;
-    margin: auto;
+    text-align: center;
 }
 
 .Nyhetswidget{
