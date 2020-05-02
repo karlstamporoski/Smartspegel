@@ -89,11 +89,13 @@ def cal():
     # Reference: https://icspy.readthedocs.io/en/stable/
 
     today = date.today()
+    day = int(today.strftime("%d"))
     year = int(today.strftime("%Y"))
     month = int(today.strftime("%m"))
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
-    cal_html = three_to_two(c.formatmonth(year, month))
+    cal_html = three_to_two(c.formatmonth(year, month))         # I will change three_to_two into something smarter
+    cal_html = cal_html.replace(f">{day}<", f">*{day}*<")
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
           "calendar.google.com/public/basic.ics"
