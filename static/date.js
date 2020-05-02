@@ -45,19 +45,19 @@ function getMonth(month) {
 function getDay(day) {
     switch(day){
         case 0:
-            return "Sön"
+            return "Söndag"
         case 1:
-            return "Mån"
+            return "Måndag"
         case 2:
-            return "Tis"
+            return "Tisdag"
         case 3:
-            return "Ons"
+            return "Onsdag"
         case 4:
-            return "Tor"
+            return "Tordag"
         case 5:
-            return "Fre"
+            return "Fredag"
         case 6:
-            return "Lör"
+            return "Lördag"
     }
 
 }
