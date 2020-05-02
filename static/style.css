@@ -16,24 +16,27 @@ body {
     z-index: -10;
 }
 
+
 .Timedatewrapper{
-    width: 7%;
     user-select: none;
+    width: 200px;
+    height: 120px;
+}
+
+#CurrentTime{
+    pointer-events: none;
+    text-align: left;
+    font-size: 79px;
+}
+
+#CurrentDate{
+    pointer-events: none;
+    font-size: 21px;
+    text-align: center;
 }
 
 .Nyhetswidget{
     pointer-events: none;
-}
-
-#CurrentTime{
-    width: 70%;
-    pointer-events: none;
-}
-
-#CurrentDate{
-    width: 70%;
-    pointer-events: none;
-  
 }
 
 .rss {

@@ -4,11 +4,9 @@ function startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
-    var s = today.getSeconds();
     m = checkTime(m);
-    s = checkTime(s);
     document.getElementById('CurrentTime').innerHTML =  // Connects to html, displays formatting
-    h + ":" + m + ":" + s;
+    h + ":" + m;
     var t = setTimeout(startTime, 1000); //Updates clock once every second
   }
 
