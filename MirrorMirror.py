@@ -122,7 +122,7 @@ def cal():
 
     cal_content = {
         "calendarHTML": cal_html,
-        "entries": entries
+        "entries": entries[0:5]
     }
     response.content_type = 'application/json'
     return json.dumps(cal_content)
