@@ -28,6 +28,7 @@ def en_to_swe(english):
     english = english.replace("month", "månad")
     english = english.replace("weeks", "veckor")
     english = english.replace("week", "vecka")
+    english = english.replace("days", "dagar")
     english = english.replace("day", "dag")
     english = english.replace("ago", "sedan")
     english = english.replace("hours", "timmar")
@@ -37,6 +38,7 @@ def en_to_swe(english):
 
 def three_to_two(cal_html):
     # Replaces three letters with two for weekday names
+    # Maybe not the best way to do it but it gets the work done
 
     cal_html = cal_html.replace("Mån", "Må")
     cal_html = cal_html.replace("Tis", "Ti")

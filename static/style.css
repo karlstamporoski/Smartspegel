@@ -108,6 +108,7 @@ body {
 .CalendarWidget{
     pointer-events: none;
     user-select: none;
+    background-color: black;
 }
 
 /* Removes month and year header from the Python calendarHTML */
