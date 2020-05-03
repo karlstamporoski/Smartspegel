@@ -35,10 +35,7 @@ body {
     text-align: center;
 }
 
-.Nyhetswidget{
-    pointer-events: none;
-}
-
+/* Newswidget: Start */ 
 .rss {
     margin: 0px;
     padding: 0px;
@@ -48,14 +45,13 @@ body {
     overflow: hidden;
 }
 
-/* Nyhets-widget: Widgetbox med animation */ 
+/* Newswidget: Widgetbox with animation */ 
 .rss-box {
     width: 540px;
     position: absolute;
     pointer-events: none;
 }
 
-/* Nyhets-widget: Rubrik */ 
 .rss-title {
     border-bottom: 1px solid white;
     overflow: hidden;
@@ -87,7 +83,7 @@ body {
     border-bottom: 1px dotted white;
 }
 
-/* Nyhets-widget: Sektion med autoscrool */ 
+/* Newswidget: Section with autoscrool */ 
 .rss-box ul {
     margin-left: 0px;
     padding: 0px;
@@ -98,7 +94,7 @@ body {
     to {transform: translateY(-100%);}
 }
 
-/* Nyhets-widget: On mouse-over paus */ 
+/* Newswidget: On mouse-over paus */ 
 .rss-box ul:hover {
     animation-play-state: paused;
 }
