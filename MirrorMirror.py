@@ -17,10 +17,10 @@ def static_files(filename):
 
 
 def en_to_swe(english):
-    # Translates english to swedish from humanize
-    # Arrow doesn't support swedish week in humanize
-    # Pull request made to Arrow repository
-    # https://github.com/crsmithdev/arrow/pull/780
+    """ Translates english to swedish from humanize
+    Arrow doesn't support swedish week in humanize
+    Pull request made to Arrow repository
+    https://github.com/crsmithdev/arrow/pull/780 """
 
     english = english.replace(" a ", " en ")
     english = english.replace("a ", "En ")
@@ -34,20 +34,6 @@ def en_to_swe(english):
     english = english.replace("hours", "timmar")
 
     return english
-
-
-def three_to_two(cal_html):
-    # Replaces three letters with two for weekday names
-
-    cal_html = cal_html.replace("Mån", "Må")
-    cal_html = cal_html.replace("Tis", "Ti")
-    cal_html = cal_html.replace("Ons", "On")
-    cal_html = cal_html.replace("Tor", "To")
-    cal_html = cal_html.replace("Fre", "Fr")
-    cal_html = cal_html.replace("Lör", "Lö")
-    cal_html = cal_html.replace("Sön", "Sö")
-
-    return cal_html
 
 
 def month_to_str(mid):
@@ -83,18 +69,27 @@ def month_to_str(mid):
 
 @route("/api/calendar")
 def cal():
-    # Creates a monthly calendar with current date and local weekday names
-    # Reference: https://docs.python.org/3/library/calendar.html
-    # Provides calendar data from a public Google Calendar .ics file
-    # with the help of ics.py and JSON
-    # Reference: https://icspy.readthedocs.io/en/stable/
+    """ Creates a monthly calendar with current date and local weekday names
+    Reference: https://docs.python.org/3/library/calendar.html
+    Provides calendar data from a public Google Calendar .ics file
+    with the help of ics.py and JSON
+    Reference: https://icspy.readthedocs.io/en/stable/ """
 
     today = date.today()
+    day = int(today.strftime("%d"))
     year = int(today.strftime("%Y"))
     month = int(today.strftime("%m"))
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
-    cal_html = three_to_two(c.formatmonth(year, month))
+    cal_html = c.formatmonth(year, month)
+    cal_html = cal_html.replace("Mån", "Må")    # Replaces three letters with two for weekday names
+    cal_html = cal_html.replace("Tis", "Ti")
+    cal_html = cal_html.replace("Ons", "On")
+    cal_html = cal_html.replace("Tor", "To")
+    cal_html = cal_html.replace("Fre", "Fr")
+    cal_html = cal_html.replace("Lör", "Lö")
+    cal_html = cal_html.replace("Sön", "Sö")
+    cal_html = cal_html.replace(f">{day}<", f"><div class='current'>{day}</div><")     # Marks the current day
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
           "calendar.google.com/public/basic.ics"
