@@ -38,7 +38,6 @@ def en_to_swe(english):
 
 def three_to_two(cal_html):
     # Replaces three letters with two for weekday names
-    # Maybe not the best way to do it but it gets the work done
 
     cal_html = cal_html.replace("Mån", "Må")
     cal_html = cal_html.replace("Tis", "Ti")
@@ -55,9 +54,9 @@ def month_to_str(mid):
     # Converts month number to month name
 
     if mid == 1:
-        return "Jan"
+        return "JAN"
     elif mid == 2:
-        return "Feb"
+        return "FEB"
     elif mid == 3:
         return "MAR"
     elif mid == 4:
@@ -89,7 +88,6 @@ def cal():
     # Provides calendar data from a public Google Calendar .ics file
     # with the help of ics.py and JSON
     # Reference: https://icspy.readthedocs.io/en/stable/
-    #
 
     today = date.today()
     day = int(today.strftime("%d"))
