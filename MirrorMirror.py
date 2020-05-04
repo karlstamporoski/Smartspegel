@@ -89,6 +89,7 @@ def cal():
     # Provides calendar data from a public Google Calendar .ics file
     # with the help of ics.py and JSON
     # Reference: https://icspy.readthedocs.io/en/stable/
+    #
 
     today = date.today()
     day = int(today.strftime("%d"))
