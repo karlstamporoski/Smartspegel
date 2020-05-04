@@ -90,7 +90,6 @@ def cal():
     # Reference: https://icspy.readthedocs.io/en/stable/
 
     today = date.today()
-    day = int(today.strftime("%d"))
     year = int(today.strftime("%Y"))
     month = int(today.strftime("%m"))
 
