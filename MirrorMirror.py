@@ -82,13 +82,20 @@ def cal():
 
     c = calendar.LocaleHTMLCalendar(calendar.MONDAY, "sv_SE")
     cal_html = c.formatmonth(year, month)
-    cal_html = cal_html.replace("Mån", "Må")    # Replaces three letters with two for weekday names
-    cal_html = cal_html.replace("Tis", "Ti")
+    cal_html = cal_html.replace("Mån", "Må")    # Replaces 3 char with 2 char for weekday names. There seems to be
+    cal_html = cal_html.replace("Tis", "Ti")    # different output of Mån-Fre/mån-fre depending on platform
     cal_html = cal_html.replace("Ons", "On")
     cal_html = cal_html.replace("Tor", "To")
     cal_html = cal_html.replace("Fre", "Fr")
     cal_html = cal_html.replace("Lör", "Lö")
     cal_html = cal_html.replace("Sön", "Sö")
+    cal_html = cal_html.replace("mån", "Må")
+    cal_html = cal_html.replace("tis", "Ti")
+    cal_html = cal_html.replace("ons", "On")
+    cal_html = cal_html.replace("tor", "To")
+    cal_html = cal_html.replace("fre", "Fr")
+    cal_html = cal_html.replace("lör", "Lö")
+    cal_html = cal_html.replace("sön", "Sö")
     cal_html = cal_html.replace(f">{day}<", f"><div class='current'>{day}</div><")     # Marks the current day
 
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
