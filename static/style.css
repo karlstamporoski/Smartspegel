@@ -25,7 +25,7 @@ body {
 
 #CurrentTime{
     pointer-events: none;
-    text-align: left;
+    text-align: center;
     font-size: 79px;
 }
 
