@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: white;
+    color: white !important;
     font-family: Arial, Helvetica, sans-serif;
 }
 
