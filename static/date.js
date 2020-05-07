@@ -53,7 +53,7 @@ function getDay(day) {
         case 3:
             return "Onsdag"
         case 4:
-            return "Tordag"
+            return "Torsdag"
         case 5:
             return "Fredag"
         case 6:

@@ -76,7 +76,6 @@ body {
 }
 
 .rss-box a {
-    color: white;
     font-weight: bold;
 } 
 
@@ -143,19 +142,19 @@ body {
 }
 
 /* Styling for current day in calendar events - currently under construction*/
-.event {
+.Event {
     display: flex;
     margin-bottom: 10px;
 }
 
-.eventSummary {
+.EventSummary {
     display: flex;
     flex-direction: column;
     border: 1px solid white;
     width: 42px;
 }
 
-.eventMonth {
+.EventMonth {
     font-size: 12px;
     font-weight: bold;
     color: black;
@@ -163,20 +162,20 @@ body {
     text-align: center;
 }
 
-.eventDay {
+.EventDay {
     font-size: 21px;
     margin: auto;
 }
 
-.eventWhenTime {
+.EventWhenTime {
     font-size: 14px;
     }
 
-.eventDetails {
+.EventDetails {
     margin-left: 8px;
 }
 
-.current {
+.Current {
     background-color: white;
     color: black;
     font-weight: bold;
