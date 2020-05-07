@@ -79,6 +79,7 @@ body {
 .rss-box a {
     font-weight: bold;
     color: white;
+    text-decoration: none;
 } 
 
 .rss-box li {
