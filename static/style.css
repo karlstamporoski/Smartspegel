@@ -18,6 +18,7 @@ body {
 
 .TimedateWrapper {
     user-select: none;
+    cursor: pointer;
     width: 200px;
     height: 120px;
 }
@@ -36,6 +37,7 @@ body {
 
 /* Newswidget: Start */ 
 .NewsWrapper {
+        cursor: pointer;
         width: 500px;
         height: 250px;
 }
@@ -112,6 +114,9 @@ body {
 /* Nyhets-widget: END */
 
 /* CalendarWidget: START */
+.CalendarWrapper{
+    cursor: pointer;
+}
 .CalendarWidget {
     pointer-events: none;
     user-select: none;
