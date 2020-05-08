@@ -118,21 +118,23 @@ def cal_events():
 
     entries = []    # Create list for calendar events
 
-    for event in gc.events:  # "Heldag" if all day activity else print out start and end time of event
-        start = event.begin.format("HH:mm")
-        end = event.end.format("HH:mm")
-        if event.all_day:
+    for event in gc.events:
+        event_begin = event.begin.to('local')   # UTC to local time zone
+        event_end = event.end.to('local')
+        start = event_begin.format("HH:mm")
+        end = event_end.format("HH:mm")
+        if event.all_day:   # "Heldag" if all day activity else print out start and end time of event
             time = "Heldag"
         else:
             time = f"{start} - {end}"
 
         entries.append({    # Picks out event information from the ics file and adds it to the entries list
             "title": event.name[:20],
-            "when": en_to_swe(event.begin.humanize()),
+            "when": en_to_swe(event_end.humanize()),
             "time": time,
             "month": month_to_str(event.begin.datetime.month),
-            "day": event.begin.datetime.day,
-            "timestamp": event.begin.timestamp
+            "day": event_end.datetime.day,
+            "timestamp": event_end.timestamp
         })
 
     entries.sort(key=lambda item: item.get("timestamp"))    # Sorts calendar events chronological
