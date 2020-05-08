@@ -127,7 +127,7 @@ def cal_events():
             time = f"{start} - {end}"
 
         entries.append({    # Picks out event information from the ics file and adds it to the entries list
-            "title": event.name,
+            "title": event.name[:20],
             "when": en_to_swe(event.begin.humanize()),
             "time": time,
             "month": month_to_str(event.begin.datetime.month),
