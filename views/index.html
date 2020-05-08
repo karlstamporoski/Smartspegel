@@ -9,16 +9,16 @@
     <body>
         <main id="container">
 
-            <div class="TimedateWrapper">
+            <div class="TimedateWrapper Draggable">
                 <div id="CurrentDate"></div>
                 <div id="CurrentTime"></div>
             </div>
             
-            <div class="CalendarWrapper">
+            <div class="CalendarWrapper Draggable">
                 <div class="CalendarWidget"></div>
             </div>
 
-            <div class="NewsWrapper">
+            <div class="NewsWrapper Draggable">
                 <div class="rss">
                     <div class="rss-box">
                         <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&chan=title&num=7&desc=1&utf=y" ></script>
@@ -31,5 +31,7 @@
     <script src="/static/time.js" defer></script>
     <script src="/static/date.js" defer></script>
     <script src="/static/calendar.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </body>
 </html>
