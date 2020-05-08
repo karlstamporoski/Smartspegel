@@ -18,7 +18,7 @@ def static_files(filename):
 
 def format_cal(cal_html):
     """ Replaces 3 char with 2 char for weekday names. There seems to be
-    different output of Mån-Fre/mån-fre depending on platform """
+    different output of Mån-Fre/mån-fre depending on platform. """
 
     cal_html = cal_html.replace("Mån", "Må")
     cal_html = cal_html.replace("Tis", "Ti")
@@ -39,9 +39,10 @@ def format_cal(cal_html):
 
 
 def en_to_swe(english):
-    """ Translates english to swedish from humanize
-    Arrow doesn't support swedish week in humanize
-    Pull request made to Arrow repository
+    """ Translates english to swedish for calendar
+    entries. Swedish is available when using humanize
+    but doesn't support swedish vecka, veckor.
+    Pull request made to Arrow repository on GitHub
     https://github.com/crsmithdev/arrow/pull/780 """
 
     english = english.replace(" a ", " en ")
@@ -59,7 +60,8 @@ def en_to_swe(english):
 
 
 def month_to_str(mid):
-    # Converts month number to month name
+    """ Converts month number to month name
+    Return: Str """
 
     if mid == 1:
         return "JAN"
@@ -89,13 +91,9 @@ def month_to_str(mid):
         return "0"
 
 
-@route("/api/calendar")
-def cal():
+def monthly_cal():
     """ Creates a monthly calendar with current date and local weekday names
-    Reference: https://docs.python.org/3/library/calendar.html
-    Provides calendar data from a public Google Calendar .ics file
-    with the help of ics.py and JSON
-    Reference: https://icspy.readthedocs.io/en/stable/ """
+    Reference: https://docs.python.org/3/library/calendar.html """
 
     today = date.today()
     day = int(today.strftime("%d"))
@@ -106,13 +104,21 @@ def cal():
     cal_html = format_cal(c.formatmonth(year, month))
     cal_html = cal_html.replace(f">{day}<", f"><div class='Current'>{day}</div><")  # Marks the current day
 
+    return cal_html
+
+
+def cal_events():
+    """ Provides calendar data from a public Google Calendar .ics file
+       with the help of ics.py
+       Reference: https://icspy.readthedocs.io/en/stable/ """
+
     url = "https://calendar.google.com/calendar/ical/bsmmlfhb8fmfepu2cjdfucbq08%40group." \
           "calendar.google.com/public/basic.ics"
     gc = Calendar(requests.get(url).text)
 
-    entries = []
+    entries = []    # Create list for calendar events
 
-    for event in gc.events:
+    for event in gc.events:  # "Heldag" if all day activity else print out start and end time of event
         start = event.begin.format("HH:mm")
         end = event.end.format("HH:mm")
         if event.all_day:
@@ -120,7 +126,7 @@ def cal():
         else:
             time = f"{start} - {end}"
 
-        entries.append({
+        entries.append({    # Picks out event information from the ics file and adds it to the entries list
             "title": event.name,
             "when": en_to_swe(event.begin.humanize()),
             "time": time,
@@ -129,7 +135,18 @@ def cal():
             "timestamp": event.begin.timestamp
         })
 
-    entries.sort(key=lambda item: item.get("timestamp"))
+    entries.sort(key=lambda item: item.get("timestamp"))    # Sorts calendar events chronological
+
+    return entries
+
+
+@route("/api/calendar")
+def cal():
+    """ Sends monthly calendar and calendar events to calendar.js
+    with JSON """
+
+    cal_html = monthly_cal()
+    entries = cal_events()
 
     cal_content = {
         "calendarHTML": cal_html,

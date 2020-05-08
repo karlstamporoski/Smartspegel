@@ -7,7 +7,7 @@ fetch("/api/calendar")
         json.entries.forEach(elem => {
             output += `
             <div class="Event">
-                <div class="EventSummary">
+                <div class="EventIcon">
                     <div class="EventMonth">${elem.month}</div>
                     <div class="EventDay">${elem.day}</div>
                 </div>

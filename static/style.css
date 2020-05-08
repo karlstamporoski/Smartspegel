@@ -163,7 +163,7 @@ body {
 	margin-bottom: 10px;
 }
 
-.EventSummary {
+.EventIcon {
 	display: flex;
 	flex-direction: column;
 	border: 1px solid white;
