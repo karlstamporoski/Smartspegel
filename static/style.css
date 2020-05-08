@@ -192,11 +192,14 @@ body {
 
 /* Weatherwidget: START */
 
-#weather-mockup {
+.WeatherWrapper {
     height: 330px;
     width: 270px;
-    pointer-events: none !important;
     user-select: none;
+}
+
+.WeatherWrapperInner {
+    pointer-events: none !important;
 }
 
 #BigIcon {
