@@ -1,3 +1,5 @@
-$( function() {
-  $( ".Draggable" ).draggable({containment: "parent"});
-} );
+$(function() {
+	$(".Draggable").draggable({
+		containment: "parent"
+	});
+});

@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/style.css" rel="stylesheet">
-    <title>Mirror Mirror</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/static/style.css" rel="stylesheet">
+	<title>Mirror Mirror</title>
 </head>
-    <body>
-        <main id="container">
 
-            <div class="TimedateWrapper Draggable">
-                <div id="CurrentDate"></div>
-                <div id="CurrentTime"></div>
-            </div>
-            
-            <div class="CalendarWrapper Draggable">
-                <div class="CalendarWidget"></div>
-            </div>
+<body>
+	<main id="container">
 
-            <div class="NewsWrapper Draggable">
-                <div class="rss">
-                    <div class="rss-box">
-                        <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&chan=title&num=7&desc=1&utf=y" ></script>
-                    </div>
-                </div>
-            </div>
+		<div class="TimedateWrapper Draggable">
+			<div id="CurrentDate"></div>
+			<div id="CurrentTime"></div>
+		</div>
 
-            <div class="WeatherWrapper">
-                <div class="WeatherWrapperInner">
-                    <img src="/static/sunny.png" id="BigIcon">
-                <div id="BigTemperature">14°</div>
-                <div id="Line"></div>
+		<div class="CalendarWrapper Draggable">
+			<div class="CalendarWidget"></div>
+		</div>
 
-                <div id="DaysAll">
-                    <div class="Days">Imorgon</div>
-                    <div class="Days">Söndag</div>
-                    <div class="Days">Måndag</div>
-                    <div class="Days">Tisdag</div>
-                </div>
+		<div class="NewsWrapper Draggable">
+			<div class="rss">
+				<div class="rss-box">
+					<script language="JavaScript" src="http://feed2js.org//feed2js.php?src=https%3A%2F%2Frss.aftonbladet.se%2Frss2%2Fsmall%2Fpages%2Fsections%2Fnyheter%2F&chan=title&num=7&desc=1&utf=y"></script>
+				</div>
+			</div>
+		</div>
 
-                <div id="IconAll">
-                    <img src="/static/cloudy.png" class="SmallIcon">
-                    <img src="/static/cloudy.png" class="SmallIcon">
-                    <img src="/static/cloudy.png" class="SmallIcon">
-                    <img src="/static/cloudy.png" class="SmallIcon">
-                </div>
+		<div class="WeatherWrapper Draggable">
+			<div class="WeatherWrapperInner">
+				<img src="/static/sunny.png" id="BigIcon">
+				<div id="BigTemperature">14°</div>
+				<div id="Line"></div>
 
-                <div id="TemperatureAll">
-                    <div class="SmallTemperature">17°</div>
-                    <div class="SmallTemperature">15°</div>
-                    <div class="SmallTemperature">10°</div>
-                    <div class="SmallTemperature">12°</div>
-                </div>
+				<div id="DaysAll">
+					<div class="Days">Imorgon</div>
+					<div class="Days">Söndag</div>
+					<div class="Days">Måndag</div>
+					<div class="Days">Tisdag</div>
+				</div>
 
-            
-                </div>
-                
-            </div>
-        </main>
-    <script src="/static/moveit.js" defer></script>
-    <script src="/static/time.js" defer></script>
-    <script src="/static/date.js" defer></script>
-    <script src="/static/calendar.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<div id="IconAll">
+					<img src="/static/cloudy.png" class="SmallIcon">
+					<img src="/static/cloudy.png" class="SmallIcon">
+					<img src="/static/cloudy.png" class="SmallIcon">
+					<img src="/static/cloudy.png" class="SmallIcon">
+				</div>
+
+				<div id="TemperatureAll">
+					<div class="SmallTemperature">17°</div>
+					<div class="SmallTemperature">15°</div>
+					<div class="SmallTemperature">10°</div>
+					<div class="SmallTemperature">12°</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</main>
+	<script src="/static/moveit.js" defer></script>
+	<script src="/static/time.js" defer></script>
+	<script src="/static/date.js" defer></script>
+	<script src="/static/calendar.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    </body>
+</body>
+
 </html>
