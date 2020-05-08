@@ -8,7 +8,11 @@ Medlemmar: Karl, Mattias, Josefine, Arian, Mohamud
 Det går att flytta på widgets genom att trycka på dem och dra de till vald plats.
 
 #### Beroenden
-cd till katalogen där requirements.txt finns och kör sen i terminalen 
+
+För att köra projektetet se först till att Bottle är installerat.		 
+http://bottlepy.org/docs/stable/
+
+I terminalen cd till katalogen där requirements.txt finns och kör sen
 ```
 pip install -r requirements.txt
 ```
