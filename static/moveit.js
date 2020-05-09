@@ -6,7 +6,7 @@ var lastDragged;
 // Create Draggables with the hitTest()
 Draggable.create(droppables, {
 	bounds: window,
-	onDragStart: function(e){
+	onDragStart: function(e) {
 		$(this.target).addClass("highlight");
 	},
 	onDrag: function(e) {
@@ -71,66 +71,64 @@ function test() {
 	// Here is where the widgets get moved.
 	var i = droppables.length;
 	while (--i > -1) {
-	  if (Draggable.hitTest(lastDragged, droppables[i], overlapThreshold)) {
-		TweenMax.to(lastDragged, 0.1, {
-			left: "-=30px",
-        	onComplete: recursive
-		});
-		$(droppables[i]).addClass("highlight");
-	  } else {
-		$(droppables[i]).removeClass("highlight");
-	  }
+		if (Draggable.hitTest(lastDragged, droppables[i], overlapThreshold)) {
+			TweenMax.to(lastDragged, 0.1, {
+				left: "-=30px",
+				onComplete: recursive
+			});
+			$(droppables[i]).addClass("highlight");
+		} else {
+			$(droppables[i]).removeClass("highlight");
+		}
 	}
-  }
+}
 /**har problem med att få denna att funka
  * Den skall kalkylera positionen en widget går in
  * och putta ut den beroende på case*/
-function getDirection(lastDragged){
-	$(droppables).bind("mouseenter", "mouseleave",function(e){
+function getDirection(lastDragged) {
+	$(droppables).bind("mouseenter", "mouseleave", function(e) {
 
 		/** the width and height of the current div **/
 		var w = $(lastDragged).width();
 		var h = $(lastDragged).height();
-		
+
 		/** calculate the x and y to get an angle to the center of the div from that x and y. **/
 		/** gets the x value relative to the center of the DIV and "normalize" it **/
-		var x = (e.pageX - lastDragged.offset().left - (w/2)) * ( w > h ? (h/w) : 1 );
-		var y = (e.pageY - lastDragged.offset().top  - (h/2)) * ( h > w ? (w/h) : 1 );
-		
+		var x = (e.pageX - lastDragged.offset().left - (w / 2)) * (w > h ? (h / w) : 1);
+		var y = (e.pageY - lastDragged.offset().top - (h / 2)) * (h > w ? (w / h) : 1);
+
 		/** the angle and the direction from where the mouse came in/went out clockwise (TRBL=0123);**/
 		/** first calculate the angle of the point, 
 		 add 180 deg to get rid of the negative values
 		 divide by 90 to get the quadrant
 		 add 3 and do a modulo by 4  to shift the quadrants to a proper clockwise TRBL (top/right/bottom/left) **/
-		var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180 ) / 90 ) + 3 )  % 4;
-		
-		
-		/** do your animations here **/ 
-		switch(direction) {
-		 case 0:
-		  /** animations from the TOP **/
-		  top:"-=30px";
-		  onComplete: recursive
-		 break;
-		 case 1:
-		  /** animations from the RIGHT **/
-		  left:"+=30px";
-		  onComplete: recursive
-		 break;
-		 case 2:
-		  /** animations from the BOTTOM **/
-		  top:"+=30px";
-		  onComplete: recursive
-		 break;
-		 case 3:
-		  /** animations from the LEFT **/
-		  left:"-=30px";
-		  onComplete: recursive
-		 break;
-		}});
-	}
-	
-	
+		var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+
+		/** do your animations here **/
+		switch (direction) {
+			case 0:
+				/** animations from the TOP **/
+				top: "-=30px";
+				onComplete: recursive
+				break;
+			case 1:
+				/** animations from the RIGHT **/
+				left: "+=30px";
+				onComplete: recursive
+				break;
+			case 2:
+				/** animations from the BOTTOM **/
+				top: "+=30px";
+				onComplete: recursive
+				break;
+			case 3:
+				/** animations from the LEFT **/
+				left: "-=30px";
+				onComplete: recursive
+				break;
+		}
+	});
+}
 
 function recursive() {
 	var i = droppables.length;
