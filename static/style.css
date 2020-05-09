@@ -17,6 +17,7 @@ body {
 }
 
 .TimedateWrapper {
+	background: black;
 	user-select: none;
 	position: absolute;
 	cursor: pointer;
@@ -45,6 +46,7 @@ body {
 
 /* Newswidget: Start */
 .NewsWrapper {
+	background: black;
 	position: absolute;
 	cursor: pointer;
 	width: 550px;
@@ -127,6 +129,7 @@ body {
 
 /* CalendarWidget: START */
 .CalendarWrapper {
+	background: black;
 	left:0px;
 	position: absolute;
 	cursor: pointer;
@@ -214,6 +217,7 @@ body {
 /* Weatherwidget: START */
 
 .WeatherWrapper {
+	background: black;
 	right:0px;
 	position: absolute;
 	height: 330px;
