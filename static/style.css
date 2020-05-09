@@ -18,11 +18,19 @@ body {
 
 .TimedateWrapper {
 	user-select: none;
+	position: absolute;
 	cursor: pointer;
+	top:0px;
 	width: 200px;
 	height: 120px;
 }
 
+.highlight {
+	border: 2px solid #F2F2F2;
+  }
+.Draggable:hover{
+	border: 2px solid white;
+}
 #CurrentTime {
 	pointer-events: none;
 	text-align: center;
@@ -37,9 +45,10 @@ body {
 
 /* Newswidget: Start */
 .NewsWrapper {
+	position: absolute;
 	cursor: pointer;
-	width: 500px;
-	height: 250px;
+	width: 550px;
+	height: 270px;
 }
 
 .rss {
@@ -118,6 +127,8 @@ body {
 
 /* CalendarWidget: START */
 .CalendarWrapper {
+	left:0px;
+	position: absolute;
 	cursor: pointer;
 }
 
@@ -203,6 +214,8 @@ body {
 /* Weatherwidget: START */
 
 .WeatherWrapper {
+	right:0px;
+	position: absolute;
 	height: 330px;
 	width: 270px;
 	user-select: none;
