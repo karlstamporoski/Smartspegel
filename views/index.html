@@ -28,10 +28,18 @@
 			</div>
 		</div>
 
+
+
 		<div class="WeatherWrapper Draggable">
 			<div class="WeatherWrapperInner">
-				<img src="/static/sunny.png" id="BigIcon">
-				<div id="BigTemperature">14°</div>
+				<img src="/static/sunny128.png" id="BigIcon">
+
+				<div id="TempAndCity">
+					<div id="BigTemperature">14°</div>
+					<div id="City">Malmö</div>
+				</div>
+
+
 				<div id="Line"></div>
 
 				<div id="DaysAll">
@@ -55,15 +63,17 @@
 					<div class="SmallTemperature">12°</div>
 				</div>
 
-
 			</div>
-
 		</div>
+
+		<div class="notification"></div>
+
 	</main>
 	<script src="/static/moveit.js" defer></script>
 	<script src="/static/time.js" defer></script>
 	<script src="/static/date.js" defer></script>
 	<script src="/static/calendar.js" defer></script>
+	<script src="/static/weather.js" defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>

@@ -40,6 +40,9 @@ function showError(error) {
     notificationElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
+
+
+/*
 // Får vädret från API:n. 
 function getWeather(latitude, longitude) {
     let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
@@ -61,9 +64,11 @@ function getWeather(latitude, longitude) {
         });
 }
 
+*/
+
 // Visar displayen för användargränssnittet. Ikonerna är länkade här.
 function displayWeather() {
-    iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+    iconElement.innerHTML = `<img src="/static/${weather.iconId}.png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
@@ -89,3 +94,4 @@ tempElement.addEventListener("click", function () {
         weather.temperature.unit = "celsius"
     }
 });
+
