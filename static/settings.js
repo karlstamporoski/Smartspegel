@@ -1,4 +1,5 @@
 
+/** Toggle to show the menu */
 $(document).ready(function(){
     $(".Show",).click(function(){
       $(".SettingsMenu").toggle(500);
@@ -6,7 +7,10 @@ $(document).ready(function(){
   });
 
 
-
+/**
+ * Toggles the arrow to show up or down
+ * for the menu
+ */
 const show = document.querySelector(".Show");
 const updiv = document.querySelector(".Up");
 const downdiv = document.querySelector(".Down");
@@ -16,7 +20,9 @@ show.addEventListener('click', () => {
 });
 
 
-
+/**
+ * toggles Draggable class from all widgets
+ */
 const lock = document.querySelector(".LockDrag");
 const drag = document.querySelector(".Draggable");
 const TimeDateWrapper = document.querySelector(".TimeDateWrapper");
@@ -27,3 +33,4 @@ lock.addEventListener('click', () => {
     
     $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper").toggleClass("Draggable")
 })
+

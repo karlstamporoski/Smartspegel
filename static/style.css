@@ -335,17 +335,40 @@ body {
 	height: 50px;
 	width: 100%;
 }
+
+
 .LockDrag{
 	background-image:url(../static/lock.jpg);
 	height:45px;
 	width:45px;
 	margin:2px 10px;
 }
+
 .LockDrag:hover{
 	cursor:pointer;
 }
+
 .LockDrag:active{
 	position:relative;
 	top:1px;
 }
+#red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 120px;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
 /*Settings: END */
