@@ -16,7 +16,7 @@ body {
 	z-index: -10;
 }
 
-.TimedateWrapper {
+.TimeDateWrapper {
 	background: black;
 	user-select: none;
 	position: absolute;
@@ -29,9 +29,13 @@ body {
 .highlight {
 	border: 2px solid #F2F2F2;
   }
+.Draggable{
+	border: 2px dotted white;
+}
 .Draggable:hover{
 	border: 2px solid white;
 }
+
 #CurrentTime {
 	pointer-events: none;
 	text-align: center;
@@ -51,6 +55,7 @@ body {
 	cursor: pointer;
 	width: 550px;
 	height: 270px;
+	
 }
 
 .rss {
@@ -300,6 +305,7 @@ body {
 
 .Show:hover{
 	opacity: 100%;
+	cursor:pointer;
 }
 .Show:active {
 	position:relative;
@@ -330,11 +336,13 @@ body {
 	width: 100%;
 }
 .LockDrag{
-	background:black;
-	color:black;
+	background-image:url(../static/lock.jpg);
 	height:45px;
 	width:45px;
 	margin:2px 10px;
+}
+.LockDrag:hover{
+	cursor:pointer;
 }
 .LockDrag:active{
 	position:relative;
