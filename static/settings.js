@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    $("button",).click(function(){
+    $(".Show",).click(function(){
       $(".SettingsMenu").toggle(500);
     });
   });
