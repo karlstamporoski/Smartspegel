@@ -292,31 +292,41 @@ body {
 /*Settings: Start */
 .SettingWrapper{
 	width: 100%;
-}
-
-.Up{
-	background:url(../static/Circle_Arrow_Up.png);
 	position: absolute;
+	bottom:0px;
+}
+button{
+	border: 0;
+	background:black;
+	height:15px;
+	width: 15px;
+	margin-left:45%;
+	
+}
+.Up{
+	background-image:url(../static/Circle_Arrow_Up.png);
+	position: relative;
 	width: 150px;
 	height: 150px;
-	border:none;
-	bottom: 50px;
+	
 }
 
 .Down{
-	background:url(../static/circle_arrow_down.png);
-	position: absolute;
+	background-image:url(../static/circle_arrow_down.png);
+	position: relative;
 	width: 150px;
 	height: 150px;
-	border:none;
-	bottom: 50px;
+
+
 }
 .FooterSettings{
-	position: absolute;
-	background: white;
-	width: 100%;
+	position: relative;
+	background:white;
+	color:black;
 	height: 50px;
-	bottom: 0px;
-	left:0px;
+	width:100%;
+	
+	
+
 
 }
