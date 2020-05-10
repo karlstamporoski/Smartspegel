@@ -11,7 +11,7 @@ def home_page():
     return template("index")
 
 
-@route("/static/<filename>")
+@route("/static/<filename:path>")
 def static_files(filename):
     return static_file(filename, root="static")
 
