@@ -289,44 +289,49 @@ body {
 
 /* Weatherwidget: END */
 
-/*Settings: Start */
+/*Settings: START */
 .SettingWrapper{
 	width: 100%;
+	height: 70px;
 	position: absolute;
 	bottom:0px;
+}
+button:hover{
+	opacity: 100%;
 }
 button{
 	border: 0;
 	background:black;
-	height:15px;
-	width: 15px;
-	margin-left:45%;
+	margin-top:44%;
+	opacity: 10%;
+
 	
 }
 .Up{
 	background-image:url(../static/Circle_Arrow_Up.png);
-	position: relative;
-	width: 150px;
-	height: 150px;
+	width: 30px;
+	height: 30px;
+	display: block;
 	
 }
 
 .Down{
 	background-image:url(../static/circle_arrow_down.png);
-	position: relative;
-	width: 150px;
-	height: 150px;
+	width: 30px;
+	height: 30px;
+	display: block;
 
 
 }
-.FooterSettings{
-	position: relative;
+
+.SettingsMenu{
+	position: absolute;
+	bottom:0px;
 	background:white;
 	color:black;
 	height: 50px;
-	width:100%;
+	width: 100%;
 	
-	
-
 
 }
+/*Settings: END */

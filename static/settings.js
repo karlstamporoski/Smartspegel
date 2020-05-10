@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("button",).click(function(){
-      $(".FooterSettings").toggle(500);
+      $(".SettingsMenu").toggle(500);
     });
   });
 
