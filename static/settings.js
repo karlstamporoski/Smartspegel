@@ -11,12 +11,5 @@ const updiv = document.querySelector(".Up");
 const downdiv = document.querySelector(".Down");
 show.addEventListener('click', () => {
 
-  downdiv.classList.add('Up');
-  downdiv.classList.remove('Down');
+  $(".Up, .Down").toggleClass("Up Down");
 });
-
-show.addEventListener('click', ()=> {
-    
-    updiv.classList.add('Down');
-    updiv.classList.remove('Up');
-})
