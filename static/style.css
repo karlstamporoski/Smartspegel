@@ -27,7 +27,7 @@ body {
 }
 
 .highlight {
-	border: 2px solid #F2F2F2;
+	border: 2px solid red !important;
   }
 .Draggable{
 	border: 2px dashed white;
@@ -300,7 +300,6 @@ body {
 	background:black;
 	margin-top:43%;
 	opacity: 10%;
-
 }
 
 .Show:hover{
