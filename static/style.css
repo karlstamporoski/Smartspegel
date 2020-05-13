@@ -2,11 +2,12 @@ body {
 	background-color: black;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
+	overflow:hidden;
 }
 
 #container {
 	width: 100%;
-	height: 960px;
+	height: 920px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -14,6 +15,7 @@ body {
 	border-radius: 7px;
 	touch-action: none;
 	z-index: -10;
+	
 }
 
 .TimeDateWrapper {
@@ -22,6 +24,7 @@ body {
 	position: absolute;
 	cursor: pointer;
 	top:0px;
+	left: 0px;
 	width: 200px;
 	height: 120px;
 }
@@ -55,6 +58,8 @@ body {
 	cursor: pointer;
 	width: 550px;
 	height: 270px;
+	right: 0px;
+	top:0px;
 	
 }
 
@@ -136,6 +141,7 @@ body {
 .CalendarWrapper {
 	background: black;
 	left:0px;
+	top: 130px;
 	position: absolute;
 	cursor: pointer;
 }
@@ -224,6 +230,7 @@ body {
 .WeatherWrapper {
 	background: black;
 	right:0px;
+	top:280px;
 	position: absolute;
 	height: 330px;
 	width: 270px;
