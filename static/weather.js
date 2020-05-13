@@ -1,6 +1,15 @@
+//Global variables
 const WEATHER_API_KEY = "cff11be67c426dc8ddb0c16b7561b3c1";
 const WEATHER_URL = "http://api.openweathermap.org/data/2.5/forecast?";
+const tempElement = document.querySelector("#BigTemperature");
+const tempElement1 = document.querySelector("#Temperature1");
+const tempElement2 = document.querySelector("#Temperature2");
+const tempElement3 = document.querySelector("#Temperature3");
+const tempElement4 = document.querySelector("#Temperature4");
 
+
+
+/** Gets the coordiantes from the user in the form of longitude and latitude */
 function getCoordinates(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -8,19 +17,34 @@ function getCoordinates(position) {
     fetchWeatherData(latitude, longitude);
 }
 
+
+/**This is an error function for when the user-position is unable to be fetched*/
 function error() {
     console.log("Unable to fetch your position");
 }
 
-function displayWeather(weatherData) {
-    console.log("Recieve this weather data");
+
+/** Prints information in the console */
+function consoleDisplayWeather(weatherData) {
+    console.log("Receive this weather data");
     console.log(weatherData);
     console.log(weatherData.city.name);
+    console.log(Math.round(weatherData.list[0].main.temp - 273));
 }
 
+function displayWeather(weatherData) {
+    tempElement.innerHTML = `${(Math.round(weatherData.list[0].main.temp - 273))}°`;
+    tempElement1.innerHTML = `${(Math.round(weatherData.list[1].main.temp - 273))}°`;
+    tempElement2.innerHTML = `${(Math.round(weatherData.list[2].main.temp - 273))}°`;
+    tempElement3.innerHTML = `${(Math.round(weatherData.list[3].main.temp - 273))}°`;
+    tempElement4.innerHTML = `${(Math.round(weatherData.list[4].main.temp - 273))}°`;
+}
+
+/** Grabs the latitude/lognitude and the API key and inserts it into the aforementionened url*/
 function fetchWeatherData(latitude, longitude) {
     const url = `${WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`;
 
+    /** Fetches the information from the new url returns it in json.  */
     fetch(url)
         .then(function(response) {
             const weatherData = response.json();
@@ -28,12 +52,15 @@ function fetchWeatherData(latitude, longitude) {
         })
         .then(function(weatherData) {
             displayWeather(weatherData);
+            consoleDisplayWeather(weatherData);
         })
         .catch(function(){
             console.log("Unable to fetch weather data");
         });
 }
 
+
+/** If the user's browser has geolocation, the coordinates get fetched. Otherwise an error function runs */
 function initializeWeatherWidget() {
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(
@@ -42,4 +69,6 @@ function initializeWeatherWidget() {
     }
 }
 
+
+// When site is loaded, the "intializeWeatherWidget" function runs.
 window.addEventListener("load", initializeWeatherWidget);
