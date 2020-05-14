@@ -218,7 +218,7 @@ body {
 
 #City {
 	font-size: 21px;
-	margin-left: 18px;
+	margin-right: 18px;
 }
 
 #BigTemperature {
@@ -273,4 +273,5 @@ body {
 	display: flex;
 	margin-bottom: 25px;
 	margin-left: 80px;
+	justify-content: center;
 }

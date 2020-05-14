@@ -6,6 +6,7 @@ const tempElement1 = document.querySelector("#Temperature1");
 const tempElement2 = document.querySelector("#Temperature2");
 const tempElement3 = document.querySelector("#Temperature3");
 const tempElement4 = document.querySelector("#Temperature4");
+const iconElement  = document.querySelector("#BigIcon");
 
 
 
@@ -30,15 +31,18 @@ function consoleDisplayWeather(weatherData) {
     console.log(weatherData);
     console.log(weatherData.city.name);
     console.log(Math.round(weatherData.list[0].main.temp - 273));
+    console.log(weatherData.list[0].weather[0].main);
 }
 
 function displayWeather(weatherData) {
-    tempElement.innerHTML = `${(Math.round(weatherData.list[0].main.temp - 273))}°`;
-    tempElement1.innerHTML = `${(Math.round(weatherData.list[1].main.temp - 273))}°`;
-    tempElement2.innerHTML = `${(Math.round(weatherData.list[2].main.temp - 273))}°`;
-    tempElement3.innerHTML = `${(Math.round(weatherData.list[3].main.temp - 273))}°`;
-    tempElement4.innerHTML = `${(Math.round(weatherData.list[4].main.temp - 273))}°`;
+    tempElement.innerHTML = `${(Math.round(weatherData.list[0].main.temp - 273.15))}°`;
+    tempElement1.innerHTML = `${(Math.round(weatherData.list[8].main.temp - 273.15))}°`;
+    tempElement2.innerHTML = `${(Math.round(weatherData.list[16].main.temp - 273.15))}°`;
+    tempElement3.innerHTML = `${(Math.round(weatherData.list[24].main.temp - 273.15))}°`;
+    tempElement4.innerHTML = `${(Math.round(weatherData.list[32].main.temp - 273.15))}°`;
 }
+
+
 
 /** Grabs the latitude/lognitude and the API key and inserts it into the aforementionened url*/
 function fetchWeatherData(latitude, longitude) {
