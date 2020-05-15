@@ -27,7 +27,7 @@ function error() {
 
 /** Prints information in the console */
 function consoleDisplayWeather(weatherData) {
-    console.log("Receive this weather data");
+    console.log("Received this weather data");
     console.log(weatherData);
     console.log(weatherData.city.name);
     console.log(Math.round(weatherData.list[0].main.temp - 273));
@@ -40,9 +40,11 @@ function displayWeather(weatherData) {
     tempElement2.innerHTML = `${(Math.round(weatherData.list[16].main.temp - 273.15))}°`;
     tempElement3.innerHTML = `${(Math.round(weatherData.list[24].main.temp - 273.15))}°`;
     tempElement4.innerHTML = `${(Math.round(weatherData.list[32].main.temp - 273.15))}°`;
+
+    if (weatherData.list[0].weather[0].main == "Rain") {
+        iconElement.src = "/static/cloudy128.png"
+    }
 }
-
-
 
 /** Grabs the latitude/lognitude and the API key and inserts it into the aforementionened url*/
 function fetchWeatherData(latitude, longitude) {
