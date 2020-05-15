@@ -11,9 +11,8 @@ $.ajax(RSS_URL, {
 
         //creates a template and target elements
         $(data)
-          .find("item").slice(-5)
+          .find("item")
           .each(function () {
-            counter = 5
             const el = $(this);
 
             const template = `
@@ -35,7 +34,7 @@ $.ajax(RSS_URL, {
           </News>
         `;
             // insert text as HTML
-            document.body.insertAdjacentHTML("beforeend", template);
+            document.getElementById('News').innerHTML = template;
           });
       }
 });
