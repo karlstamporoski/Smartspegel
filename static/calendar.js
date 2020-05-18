@@ -1,11 +1,15 @@
 /** Fetches monthly calendar and calendar data från MirrorMirror.py with JSON.
-Calendar data output is sorted by day, title, when and time.*/ 
-fetch("/api/calendar")
-    .then(response => response.json())
-    .then((json) => {
-        var output = json.calendarHTML;
-        json.entries.forEach(elem => {
-            output += `
+Calendar data output is sorted by day, title, when and time.*/
+var myVar = setInterval(myCal, 1000);
+
+function myCal() {
+    fetch("/api/calendar")
+        .then(response => response.json())
+        .then((json) => {
+            var output = json.calendarHTML;
+
+            json.entries.forEach(elem => {
+                output += `
             <div class="Event">
                 <div class="EventIcon">
                     <div class="EventMonth">${elem.month}</div>
@@ -17,7 +21,10 @@ fetch("/api/calendar")
                 </div>
             </div>
             `;
-        })
-        var calcontent = document.querySelector('.CalendarWidget');
-        calcontent.innerHTML = output
-    });
+            })
+
+            var calcontent = document.querySelector('.CalendarWidget');
+            calcontent.innerHTML = output
+
+        });
+}
