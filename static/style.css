@@ -234,14 +234,18 @@ body {
 	pointer-events: none !important;
 }
 
-#BigIcon {
-	margin-top: 20px;
-	margin-left: 40px;
+#TempAndCity {
+	float: right;
+}
+
+#City {
+	font-size: 21px;
+	margin-right: 50%;
 }
 
 #BigTemperature {
 	font-size: 79px;
-	float: right;
+	
 	margin-right: 10px;
 	margin-top: 10px;
 }
@@ -249,7 +253,8 @@ body {
 #Line {
 	border: 1px solid #ffffff;
 	opacity: 1;
-	margin-top: 10px;
+	margin-top: 20px;
+	margin-bottom: -10px;
 }
 
 .Days {

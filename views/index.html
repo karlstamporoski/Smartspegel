@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,31 +24,40 @@
 			
 		</div>
 
+
+
 		<div class="WeatherWrapper Draggable">
 			<div class="WeatherWrapperInner">
-				<img src="/static/sunny.png" id="BigIcon">
-				<div id="BigTemperature">14°</div>
+
+				<img src="/static/Unknown128.png" id="BigIcon">
+
+				<div id="TempAndCity">
+					<div id="BigTemperature">-</div>
+					<div id="City">-</div>
+				</div>
+
+
 				<div id="Line"></div>
 
 				<div id="DaysAll">
-					<div class="Days">Imorgon</div>
-					<div class="Days">Söndag</div>
-					<div class="Days">Måndag</div>
-					<div class="Days">Tisdag</div>
+					<div class="Days" id="Day2">-</div>
+					<div class="Days" id="Day3">-</div>
+					<div class="Days" id="Day4">-</div>
+					<div class="Days" id="Day5">-</div>
 				</div>
 
 				<div id="IconAll">
-					<img src="/static/cloudy.png" class="SmallIcon">
-					<img src="/static/cloudy.png" class="SmallIcon">
-					<img src="/static/cloudy.png" class="SmallIcon">
-					<img src="/static/cloudy.png" class="SmallIcon">
+					<img src="/static/Unknown32.png" class="SmallIcon" id="Icon1">
+					<img src="/static/Unknown32.png" class="SmallIcon" id="Icon2">
+					<img src="/static/Unknown32.png" class="SmallIcon" id="Icon3">
+					<img src="/static/Unknown32.png" class="SmallIcon" id="Icon4">
 				</div>
 
 				<div id="TemperatureAll">
-					<div class="SmallTemperature">17°</div>
-					<div class="SmallTemperature">15°</div>
-					<div class="SmallTemperature">10°</div>
-					<div class="SmallTemperature">12°</div>
+					<div class="SmallTemperature" id="Temperature1">-</div>
+					<div class="SmallTemperature" id="Temperature2">-</div>
+					<div class="SmallTemperature" id="Temperature3">-</div>
+					<div class="SmallTemperature" id="Temperature4">-</div>
 				</div>
 			</div>
 		</div>
