@@ -1,3 +1,4 @@
+var IsLocked = false;
 
 /** Toggle to show the menu */
 $(document).ready(function(){
@@ -31,6 +32,22 @@ const NewsWrapper = document.querySelector(".NewsWrapper");
 const WeatherWrapper = document.querySelector(".WeatherWrapper");
 lock.addEventListener('click', () => {
     
-    $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper").toggleClass("Draggable")
+
+    var draggables = $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper");
+    draggables.toggleClass("Draggable");
+    draggables.each(function(index, draggable){
+      if (IsLocked){
+        Draggable.get(draggable).enable();
+      }
+      else{
+        Draggable.get(draggable).disable();
+      }
+    })
+    if (IsLocked){
+      IsLocked = false;
+    }
+    else{
+      IsLocked = true;
+    }
 })
 
