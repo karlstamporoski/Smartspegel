@@ -33,6 +33,12 @@ Draggable.create(droppables, {
 	}
 });
 
+function moveUntillOutside(dragged, dropped, overlapThreshold, pos){
+  if (Draggable.hitTest(dragged, dropped, overlapThreshold)){
+    TweenMax.to(dragged, 0.00001, pos);
+  }
+}
+
 function moveOtherDraggable(dragged, dropped, event) {
   var w = $(dropped).width();
   var h = $(dropped).height();
@@ -42,27 +48,33 @@ function moveOtherDraggable(dragged, dropped, event) {
   var y = (event.pageY - offset.top - (h / 2)) * (h > w ? (w / h) : 1);
   var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
 
-  let pos = {};
+  let pos = {
+   
+
+  };
 
   switch (direction) {
     // Top
     case 0:
-      pos.top = "-=200px";
+      pos.top = "-=20px";
       break;
     // Right
     case 1:
-      pos.left = "+=200px";
+      pos.left = "+=20px";
       break;
     // Bottom
     case 2:
-      pos.top = "+=200px";
+      pos.top = "+=20px";
       break;
     // Left
     case 3:
-      pos.left = "-=200px";
+      pos.left = "-=20px";
       break;
   }
 
+pos.onComplete = function(){
+  moveUntillOutside(dragged, dropped, overlapThreshold, pos);
+}
   // TODO: change the position from +/- 30px to instead check where
   //       the `dropped` element is positioned and place the `dragged`
   //       element outside of this element (with an additional, perhaps,
@@ -70,5 +82,5 @@ function moveOtherDraggable(dragged, dropped, event) {
   //	   Or re check if the 'dragged' element is still in collision with the
   //	   element and re run the logic of the kollision function 
 
-  TweenMax.to(dragged, 0.1, pos);
+  TweenMax.to(dragged, 0.00001, pos);
 }
