@@ -20,6 +20,27 @@ show.addEventListener('click', () => {
   $(".Up, .Down").toggleClass("Up Down");
 });
 
+/**
+ * Toggles image for locked/unlocked
+ */
+const lockdiv = document.querySelector(".LockDrag");
+const lockedDiv = document.querySelector(".LockOpen");
+const unlockedDiv = document.querySelector(".LockClosed");
+lockdiv.addEventListener('click', () => {
+  
+  $(".LockOpen, .LockClosed").toggleClass("LockOpen LockClosed");
+});
+
+/**
+ * Toggles image for Show/hide
+ */
+const HideDiv = document.querySelector(".HideWidgets");
+const OpenEyeDiv = document.querySelector(".OpenEye");
+const ClosedEyeDiv = document.querySelector(".ClosedEye");
+HideDiv.addEventListener('click', () => {
+  
+  $(".OpenEye, .ClosedEye").toggleClass("OpenEye ClosedEye");
+});
 
 /**
  * toggles Draggable class from all widgets
