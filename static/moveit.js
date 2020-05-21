@@ -33,12 +33,25 @@ Draggable.create(droppables, {
 	}
 });
 
+/**
+ * Adds a animation to the kollided block when moved
+ * @param {*} dragged 
+ * @param {*} dropped 
+ * @param {*} overlapThreshold 
+ * @param {*} pos 
+ */
 function moveUntillOutside(dragged, dropped, overlapThreshold, pos){
   if (Draggable.hitTest(dragged, dropped, overlapThreshold)){
-    TweenMax.to(dragged, 0.00001, pos);
+    TweenMax.to(dragged, 0.01, pos);
   }
 }
 
+/**
+ * Logic for the collided element
+ * @param {*} dragged 
+ * @param {*} dropped 
+ * @param {*} event 
+ */
 function moveOtherDraggable(dragged, dropped, event) {
   var w = $(dropped).width();
   var h = $(dropped).height();
@@ -72,15 +85,13 @@ function moveOtherDraggable(dragged, dropped, event) {
       break;
   }
 
+  /**
+   * Checks if element is still coliding
+   * Loops logic
+   */
 pos.onComplete = function(){
   moveUntillOutside(dragged, dropped, overlapThreshold, pos);
 }
-  // TODO: change the position from +/- 30px to instead check where
-  //       the `dropped` element is positioned and place the `dragged`
-  //       element outside of this element (with an additional, perhaps,
-  //       +/- 30px like before).
-  //	   Or re check if the 'dragged' element is still in collision with the
-  //	   element and re run the logic of the kollision function 
 
-  TweenMax.to(dragged, 0.00001, pos);
+  TweenMax.to(dragged, 0.01, pos);
 }
