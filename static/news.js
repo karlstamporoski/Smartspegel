@@ -17,25 +17,24 @@ $.ajax(RSS_URL, {
             const el = $(this);
 
             const template = `
-          <News>
-            <rubrik>
-              <a href="${el
+            <header>
+              <a ="${el
                 .find("link")
                 .text()}" target="_blank" rel="noopener">
                 ${el.find("title").text()}
               </a>
-            </rubrik>
-            <p>
-                <a href="${el
-                    .find("link")
-                    .text()}" target="_blank" rel="noopener">
-                    ${el.find("description").text()}
-                </a>
-            </p>
-          </News>
-        `;
-            // insert text 
-            document.querySelector(".NewsFeed").insertAdjacentHTML("beforeend", template);
-          });
-      }
+            </header>
+            <content>
+              <a ="${el
+                  .find("link")
+                  .text()}" target="_blank" rel="noopener">
+                  ${el.find("description").text()
+                .slice(2)} 
+              </a>
+            </content>
+      `;
+      // insert text as HTML
+      document.querySelector(".NewsFeed").insertAdjacentHTML("beforeend", template);
+    });
+}
 });
