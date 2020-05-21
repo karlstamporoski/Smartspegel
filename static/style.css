@@ -260,8 +260,8 @@ body {
 #Line {
 	border: 1px solid #ffffff;
 	opacity: 1;
-	margin-top: 20px;
-	margin-bottom: -10px;
+	margin-top: 10px;
+	margin-bottom: -20px;
 }
 
 .Days {

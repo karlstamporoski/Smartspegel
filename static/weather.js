@@ -183,106 +183,106 @@ function displayWeather(weatherData) {
     /** Chooses the icon depending on the API response and then inserts it into the HTML */
     /** Icons for today */
     if (weatherData.list[0].weather[0].main == "Rain" || weatherData.list[0].weather[0].main == "Drizzle") {
-        iconElement.src = "/static/Rain128.png"
+        iconElement.src = "/static/icons/Rain128.png"
 
     }   else if (weatherData.list[0].weather[0].main == "Thunderstorm") {
-        iconElement.src ="/static/Thunderstorm128.png"
+        iconElement.src ="/static/icons/Thunderstorm128.png"
 
     }   else if (weatherData.list[0].weather[0].main == "Snow") {
-        iconElement.src ="/static/Snow128.png"
+        iconElement.src ="/static/icons/Snow128.png"
 
     }   else if (weatherData.list[0].weather[0].main == "Clear") {
-        iconElement.src ="/static/Clear128.png"
+        iconElement.src ="/static/icons/Clear128.png"
 
     }   else if (weatherData.list[0].weather[0].main == "Clouds") {
-        iconElement.src ="/static/Clouds128.png"
+        iconElement.src ="/static/icons/Clouds128.png"
 
     }   else if (weatherData.list[0].weather[0].main == "Mist" || weatherData.list[0].weather[0].main == "Smoke" || weatherData.list[0].weather[0].main == "Haze" || weatherData.list[0].weather[0].main == "Dust" || weatherData.list[0].weather[0].main == "Fog" || weatherData.list[0].weather[0].main == "Sand" || weatherData.list[0].weather[0].main == "Ash" || weatherData.list[0].weather[0].main == "Squall" || weatherData.list[0].weather[0].main == "Tornado") {
-        iconElement.src ="/static/Atmosphere128.png"
+        iconElement.src ="/static/icons/Atmosphere128.png"
     }        
 
 
     /** Icons for tomorrow*/
     if (weatherData.list[8].weather[0].main == "Rain" || weatherData.list[8].weather[0].main == "Drizzle") {
-        iconElement1.src = "/static/Rain32.png"
+        iconElement1.src = "/static/icons/Rain32.png"
 
     }   else if (weatherData.list[8].weather[0].main == "Thunderstorm") {
-        iconElement1.src ="/static/Thunderstorm32.png"
+        iconElement1.src ="/static/icons/Thunderstorm32.png"
 
     }   else if (weatherData.list[8].weather[0].main == "Snow") {
-        iconElement1.src ="/static/Snow32.png"
+        iconElement1.src ="/static/icons/Snow32.png"
 
     }   else if (weatherData.list[8].weather[0].main == "Clear") {
-        iconElement1.src ="/static/Clear32.png"
+        iconElement1.src ="/static/icons/Clear32.png"
 
     }   else if (weatherData.list[8].weather[0].main == "Clouds") {
-        iconElement1.src ="/static/Clouds32.png"
+        iconElement1.src ="/static/icons/Clouds32.png"
 
     }   else if (weatherData.list[8].weather[0].main == "Mist" || weatherData.list[8].weather[0].main == "Smoke" || weatherData.list[8].weather[0].main == "Haze" || weatherData.list[8].weather[0].main == "Dust" || weatherData.list[8].weather[0].main == "Fog" || weatherData.list[8].weather[0].main == "Sand" || weatherData.list[8].weather[0].main == "Ash" || weatherData.list[8].weather[0].main == "Squall" || weatherData.list[8].weather[0].main == "Tornado") {
-        iconElement1.src ="/static/Atmosphere32.png"
+        iconElement1.src ="/static/icons/Atmosphere32.png"
     }
 
 
     /** Icons for overmorrow */
     if (weatherData.list[16].weather[0].main == "Rain" || weatherData.list[16].weather[0].main == "Drizzle") {
-        iconElement2.src = "/static/Rain32.png"
+        iconElement2.src = "/static/icons/Rain32.png"
 
     }   else if (weatherData.list[16].weather[0].main == "Thunderstorm") {
-        iconElement2.src ="/static/Thunderstorm32.png"
+        iconElement2.src ="/static/icons/Thunderstorm32.png"
 
     }   else if (weatherData.list[16].weather[0].main == "Snow") {
-        iconElement2.src ="/static/Snow32.png"
+        iconElement2.src ="/static/icons/Snow32.png"
 
     }   else if (weatherData.list[16].weather[0].main == "Clear") {
-        iconElement2.src ="/static/Clear32.png"
+        iconElement2.src ="/static/icons/Clear32.png"
 
     }   else if (weatherData.list[16].weather[0].main == "Clouds") {
-        iconElement2.src ="/static/Clouds32.png"
+        iconElement2.src ="/static/icons/Clouds32.png"
 
     }   else if (weatherData.list[16].weather[0].main == "Mist" || weatherData.list[16].weather[0].main == "Smoke" || weatherData.list[16].weather[0].main == "Haze" || weatherData.list[16].weather[0].main == "Dust" || weatherData.list[16].weather[0].main == "Fog" || weatherData.list[16].weather[0].main == "Sand" || weatherData.list[16].weather[0].main == "Ash" || weatherData.list[16].weather[0].main == "Squall" || weatherData.list[16].weather[0].main == "Tornado") {
-        iconElement2.src ="/static/Atmosphere32.png"
+        iconElement2.src ="/static/icons/Atmosphere32.png"
     }
 
 
     /** Icons for the day after overmorrow  */
     if (weatherData.list[24].weather[0].main == "Rain" || weatherData.list[24].weather[0].main == "Drizzle") {
-        iconElement3.src = "/static/Rain32.png"
+        iconElement3.src = "/static/icons/Rain32.png"
 
     }   else if (weatherData.list[24].weather[0].main == "Thunderstorm") {
-        iconElement3.src ="/static/Thunderstorm32.png"
+        iconElement3.src ="/static/icons/Thunderstorm32.png"
 
     }   else if (weatherData.list[24].weather[0].main == "Snow") {
-        iconElement3.src ="/static/Snow32.png"
+        iconElement3.src ="/static/icons/Snow32.png"
 
     }   else if (weatherData.list[24].weather[0].main == "Clear") {
-        iconElement3.src ="/static/Clear32.png"
+        iconElement3.src ="/static/icons/Clear32.png"
 
     }   else if (weatherData.list[24].weather[0].main == "Clouds") {
-        iconElement3.src ="/static/Clouds32.png"
+        iconElement3.src ="/static/icons/Clouds32.png"
 
     }   else if (weatherData.list[24].weather[0].main == "Mist" || weatherData.list[24].weather[0].main == "Smoke" || weatherData.list[24].weather[0].main == "Haze" || weatherData.list[24].weather[0].main == "Dust" || weatherData.list[24].weather[0].main == "Fog" || weatherData.list[24].weather[0].main == "Sand" || weatherData.list[24].weather[0].main == "Ash" || weatherData.list[24].weather[0].main == "Squall" || weatherData.list[24].weather[0].main == "Tornado") {
-        iconElement3.src ="/static/Atmosphere32.png"
+        iconElement3.src ="/static/icons/Atmosphere32.png"
     }
 
 
     //**Icons for two days after overmorrow */
     if (weatherData.list[32].weather[0].main == "Rain" || weatherData.list[32].weather[0].main == "Drizzle") {
-        iconElement4.src = "/static/Rain32.png"
+        iconElement4.src = "/static/icons/Rain32.png"
 
     }   else if (weatherData.list[32].weather[0].main == "Thunderstorm") {
-        iconElement4.src ="/static/Thunderstorm32.png"
+        iconElement4.src ="/static/icons/Thunderstorm32.png"
 
     }   else if (weatherData.list[32].weather[0].main == "Snow") {
-        iconElement4.src ="/static/Snow32.png"
+        iconElement4.src ="/static/icons/Snow32.png"
 
     }   else if (weatherData.list[32].weather[0].main == "Clear") {
-        iconElement4.src ="/static/Clear32.png"
+        iconElement4.src ="/static/icons/Clear32.png"
 
     }   else if (weatherData.list[32].weather[0].main == "Clouds") {
-        iconElement4.src ="/static/Clouds32.png"
+        iconElement4.src ="/static/icons/Clouds32.png"
 
     }   else if (weatherData.list[32].weather[0].main == "Mist" || weatherData.list[32].weather[0].main == "Smoke" || weatherData.list[32].weather[0].main == "Haze" || weatherData.list[32].weather[0].main == "Dust" || weatherData.list[32].weather[0].main == "Fog" || weatherData.list[32].weather[0].main == "Sand" || weatherData.list[32].weather[0].main == "Ash" || weatherData.list[32].weather[0].main == "Squall" || weatherData.list[32].weather[0].main == "Tornado") {
-        iconElement4.src ="/static/Atmosphere32.png"
+        iconElement4.src ="/static/icons/Atmosphere32.png"
     }
 }
 
