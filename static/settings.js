@@ -21,7 +21,7 @@ show.addEventListener('click', () => {
 });
 
 /**
- * Toggles image for locked/unlocked
+ * Toggles locked/unlocked
  */
 const lockdiv = document.querySelector(".LockDrag");
 const lockedDiv = document.querySelector(".LockOpen");
@@ -32,7 +32,7 @@ lockdiv.addEventListener('click', () => {
 });
 
 /**
- * Toggles image for Show/hide
+ * Toggles Show/hide
  */
 const HideDiv = document.querySelector(".HideWidgets");
 const OpenEyeDiv = document.querySelector(".OpenEye");
@@ -41,6 +41,17 @@ HideDiv.addEventListener('click', () => {
   
   $(".OpenEye, .ClosedEye").toggleClass("OpenEye ClosedEye");
 });
+
+const HideDiv = document.querySelector(".HideWidgets");
+const hiddenDiv = document.querySelector(".HiddenWidget");
+const TimeDateWrapper = document.querySelector(".TimeDateWrapper");
+const CalendarWrapper = document.querySelector("CalendarWrapper");
+const NewsWrapper = document.querySelector(".NewsWrapper");
+const WeatherWrapper = document.querySelector(".WeatherWrapper");
+HideDiv.addEventListener('click', () => {
+
+  $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper").toggleClass(".HiddenWidget");
+})
 
 /**
  * toggles Draggable class from all widgets
