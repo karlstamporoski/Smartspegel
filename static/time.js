@@ -7,7 +7,7 @@ function startTime() {
     m = checkTime(m);
     document.getElementById('CurrentTime').innerHTML =  // Connects to html, displays formatting
     h + ":" + m;
-    var t = setTimeout(startTime, 1000); //Updates clock once every second
+    var t = setTimeout(startTime, 60000); //Updates clock once every second
   }
 
   

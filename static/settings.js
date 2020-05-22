@@ -21,17 +21,6 @@ show.addEventListener('click', () => {
 });
 
 /**
- * Toggles locked/unlocked
- */
-const lockdiv = document.querySelector(".LockDrag");
-const lockedDiv = document.querySelector(".LockOpen");
-const unlockedDiv = document.querySelector(".LockClosed");
-lockdiv.addEventListener('click', () => {
-  
-  $(".LockOpen, .LockClosed").toggleClass("LockOpen LockClosed");
-});
-
-/**
  * Toggles Show/hide
  */
 const HideDiv = document.querySelector(".HideWidgets");
@@ -42,24 +31,34 @@ HideDiv.addEventListener('click', () => {
   $(".OpenEye, .ClosedEye").toggleClass("OpenEye ClosedEye");
 });
 
-const HideDiv = document.querySelector(".HideWidgets");
-const hiddenDiv = document.querySelector(".HiddenWidget");
-const TimeDateWrapper = document.querySelector(".TimeDateWrapper");
-const CalendarWrapper = document.querySelector("CalendarWrapper");
-const NewsWrapper = document.querySelector(".NewsWrapper");
-const WeatherWrapper = document.querySelector(".WeatherWrapper");
-HideDiv.addEventListener('click', () => {
+const Hide = document.querySelector(".HideWidgets");
+const Hidden = document.querySelector(".HiddenWidget"); 
+const TimeDateDiv = document.querySelector(".TimeDateWrapper");
+const CalendarDiv = document.querySelector(".CalendarWrapper");
+const NewsDiv = document.querySelector(".NewsWrapper");
+const WeatherDiv = document.querySelector(".WeatherWrapper");
+Hide.addEventListener('click', () => {
 
-  $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper").toggleClass(".HiddenWidget");
-})
+  $(".TimeDateWrapper, .CalendarWrapper, .NewsWrapper, .WeatherWrapper").toggleClass("HiddenWidget");
+});
 
 /**
+ * Switches image from locked/unlocked
  * toggles Draggable class from all widgets
  */
+
+const lockdiv = document.querySelector(".LockDrag");
+const lockedDiv = document.querySelector(".LockOpen");
+const unlockedDiv = document.querySelector(".LockClosed");
+lockdiv.addEventListener('click', () => {
+  
+  $(".LockOpen, .LockClosed").toggleClass("LockOpen LockClosed");
+});
+
 const lock = document.querySelector(".LockDrag");
 const drag = document.querySelector(".Draggable");
 const TimeDateWrapper = document.querySelector(".TimeDateWrapper");
-const CalendarWrapper = document.querySelector("CalendarWrapper");
+const CalendarWrapper = document.querySelector(".CalendarWrapper");
 const NewsWrapper = document.querySelector(".NewsWrapper");
 const WeatherWrapper = document.querySelector(".WeatherWrapper");
 lock.addEventListener('click', () => {
