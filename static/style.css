@@ -49,85 +49,52 @@ body {
 }
 
 /* Newswidget: Start */
-.NewsWrapper {
+.NewsFeed {
 	background: black;
 	position: absolute;
 	cursor: pointer;
-	width: 550px;
-	height: 270px;
-	
-}
-
-.rss {
-	margin: 0px;
-	padding: 0px;
 	width: 540px;
-	height: 200px;
-	position: absolute;
-	overflow: hidden;
+    height: 200px;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 14px;
+	font-weight: bold;
 	pointer-events: none;
 }
 
-/* Newswidget: Widgetbox with animation */
-.rss-box {
-	width: 540px;
-	position: absolute;
-	pointer-events: none;
+.NewsFeed wraper {
+	display: block;
+	animation: feed 15s infinite linear;
 }
 
-.rss-title {
-	border-bottom: 1px solid white;
+.NewsFeed header {
+	display: block;
+}
+
+.NewsFeed p {
+	display: block;
+	font-weight: normal;
+	border-bottom: dotted white 1px;
+	padding-bottom: 2px;
+}
+
+h1 {
+	font-size: 21px;
 	overflow: hidden;
-	box-sizing: border-box;
 	background-color: black;
+	z-index: 1;
 	width: 540px;
 	height: 20px;
-	margin: 0px;
-	padding-bottom: 5px;
 	position: absolute;
-	z-index: 1;
-	pointer-events: none;
-	cursor: default;
-	text-decoration: none;
-	font-size: 20px;
-	height: 30px;
-	color: white;
+	top: -20px;
+	border-bottom: solid white 1px;
+	padding-bottom: 3px;
 }
 
-.rss-box a {
-	font-weight: bold;
-	color: white;
-	text-decoration: none;
-}
-
-.rss-box li {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	font-size: 14px;
-	border-bottom: 1px dotted white;
-}
-
-.rss-item {
-	color: white;
-}
-
-/* Newswidget: Section with autoscrool */
-.rss-box ul {
-	margin-left: 0px;
-	padding: 0px;
-	animation: nyheter 30s infinite linear;
-}
-
-@keyframes nyheter {
+@keyframes feed {
 	to {
-		transform: translateY(-100%);
+		transform: translateY(-200px);
 	}
-}
-
-/* Newswidget: On mouse-over paus */
-.rss-box ul:hover {
-	animation-play-state: paused;
 }
 
 /* Nyhets-widget: END */
