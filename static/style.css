@@ -52,6 +52,16 @@ body {
 }
 
 /* Newswidget: Start */
+.NewsWrapper {
+	background: black;
+	user-select: none;
+	position: absolute;
+	cursor: pointer;
+	width: 540px;
+	height: 200px;
+	z-index: 1;
+}
+
 .NewsFeed {
 	background: black;
 	position: absolute;
@@ -59,22 +69,46 @@ body {
 	width: 540px;
     height: 200px;
     text-decoration: none;
-    overflow:hidden;
-    padding: 5px;
+    overflow: hidden;
     font-size: 14px;
-    font-weight: bold;
+	font-weight: bold;
+	pointer-events: none;
+	user-select: none;
+}
+
+.NewsFeed wraper {
+	display: block;
+	animation: feed 15s infinite linear;
 }
 
 .NewsFeed header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    list-style: none;
-    border-top: dotted 1px white;
+	display: block;
 }
 
-.NewsFeed content {
-    font-size: 14px;
-    font-weight: normal;
+.NewsFeed p {
+	display: block;
+	font-weight: normal;
+	border-bottom: dotted white 1px;
+	padding-bottom: 2px;
+}
+
+h1 {
+	font-size: 21px;
+	overflow: hidden;
+	background-color: black;
+	z-index: 1;
+	width: 540px;
+	height: 20px;
+	position: absolute;
+	top: -20px;
+	border-bottom: solid white 1px;
+	padding-bottom: 3px;
+}
+
+@keyframes feed {
+	to {
+		transform: translateY(-200px);
+	}
 }
 
 /* Nyhets-widget: END */
