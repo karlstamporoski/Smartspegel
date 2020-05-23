@@ -401,3 +401,50 @@ h1 {
 /*Show/hide Widgets END*/
 
 /*Settings: END */
+
+/* InfoButton: START */
+#InfoButton {
+	position: absolute;
+	bottom: 0px;
+	margin: auto;
+}
+
+.modal {
+	display: none; 
+	position: absolute;
+	z-index: 3; 
+	padding: 10px;
+	bottom: 50%;
+	overflow: auto; 
+	background-color: rgb(66, 66, 66);
+	border-radius: 10px;
+	margin: 0px;
+}
+
+  .modal-content {
+	margin: 0px;
+	padding: 0px;
+}
+
+  .modal-content img {
+	-webkit-filter: grayscale(1) invert(1);
+	filter: grayscale(1) invert(1);
+	padding-right: 5px;
+}  
+
+  /* The Close Button */
+  .close {
+	color: white;
+	float: right;
+	font-size: 35px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/* InfoButton: END */
