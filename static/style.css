@@ -403,11 +403,19 @@ h1 {
 /*Settings: END */
 
 /* InfoButton: START */
+.InfoWrapper{
+	position: absolute;
+	width:540px;
+	height:130px;
+	z-index: 3 !important;
+	
+}
 #InfoButton {
 	position: absolute;
-	bottom: 0px;
+	bottom: 1px;
+	left:48.5%;
 	margin: auto;
-	background-color: white;
+	background:white;
 	border: none;
 }
 
