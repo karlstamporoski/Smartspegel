@@ -407,6 +407,8 @@ h1 {
 	position: absolute;
 	bottom: 0px;
 	margin: auto;
+	background-color: white;
+	border: none;
 }
 
 .modal {
