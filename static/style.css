@@ -399,7 +399,6 @@ h1 {
 }
 
 /*Show/hide Widgets END*/
-
 /*Settings: END */
 
 /* InfoButton: START */
@@ -407,16 +406,21 @@ h1 {
 	position: absolute;
 	width:540px;
 	height:130px;
-	z-index: 3 !important;
-	
+	z-index: 3 !important;	
 }
+
 #InfoButton {
 	position: absolute;
 	bottom: 1px;
-	left:48.5%;
-	margin: auto;
 	background:white;
 	border: none;
+	padding: 0px;
+	left: 50%;
+	margin-left: -22px;
+}
+
+#InfoButton img:active {
+	transform: translateY(1px);
 }
 
 .modal {
@@ -431,19 +435,19 @@ h1 {
 	margin: 0px;
 }
 
-  .modal-content {
+.modal-content {
 	margin: 0px;
 	padding: 0px;
 }
 
-  .modal-content img {
+.modal-content img {
 	-webkit-filter: grayscale(1) invert(1);
 	filter: grayscale(1) invert(1);
 	padding-right: 5px;
 }  
 
-  /* The Close Button */
-  .close {
+/* The Close Button */
+.close {
 	color: white;
 	float: right;
 	font-size: 35px;
@@ -451,8 +455,8 @@ h1 {
 	padding-left: 15px;
 }
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
