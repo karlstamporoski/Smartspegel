@@ -1,3 +1,5 @@
+from gevent import monkey
+monkey.patch_all()
 from bottle import route, run, template, static_file, response
 import calendar
 import json
@@ -158,4 +160,5 @@ def cal():
     return json.dumps(cal_content)
 
 
-run(reloader=True, host="localhost", port=8080)
+
+run(server='gevent', reloader=True, host="localhost", port=8080, certfile='server.crt', keyfile='server.key')

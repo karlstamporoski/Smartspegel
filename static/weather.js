@@ -1,6 +1,6 @@
 //Global variables
 const WEATHER_API_KEY = "cff11be67c426dc8ddb0c16b7561b3c1";
-const WEATHER_URL = "http://api.openweathermap.org/data/2.5/forecast?";
+const WEATHER_URL = "https://api.openweathermap.org/data/2.5/forecast?";
 const tempElement = document.querySelector("#BigTemperature");
 const tempElement1 = document.querySelector("#Temperature1");
 const tempElement2 = document.querySelector("#Temperature2");
