@@ -1,7 +1,7 @@
 /** Fetches monthly calendar and calendar data från MirrorMirror.py with JSON.
 Calendar data output is sorted by day, title, when and time.*/
-var myVar = setInterval(myCal, 1000);
-
+var myVar = setInterval(myCal, 60*1000);
+myCal();
 function myCal() {
     fetch("/api/calendar")
         .then(response => response.json())
@@ -9,8 +9,9 @@ function myCal() {
             var output = json.calendarHTML;
 
             json.entries.forEach(elem => {
+                today = elem.today?'today':'tomorrow';
                 output += `
-            <div class="Event">
+            <div class="Event ${today}">
                 <div class="EventIcon">
                     <div class="EventMonth">${elem.month}</div>
                     <div class="EventDay">${elem.day}</div>

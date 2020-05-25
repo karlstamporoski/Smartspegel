@@ -155,13 +155,18 @@ h1 {
 .CalendarWidget td {
 	text-align: center;
 	padding: 5px;
-	font-size: 21px;
+	font-size: 19px;
 }
 
-/* Styling for current day in calendar events - currently under construction*/
+/* Styling for current day in calendar events */
 .Event {
 	display: flex;
 	margin-bottom: 10px;
+}
+
+.Event.today + .Event.tomorrow {
+    border-top: 1px solid white;
+    padding-top: 10px;
 }
 
 .EventIcon {
@@ -197,6 +202,8 @@ h1 {
 	color: black;
 	font-weight: bold;
 	border-radius: 50%;
+	padding: 3px;
+	margin: -3px;
 }
 
 /* CalendarWidget: END */

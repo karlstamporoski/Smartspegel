@@ -123,6 +123,9 @@ def cal_events():
         event_end = event.end.to('local')
         start = event_begin.format("HH:mm")
         end = event_end.format("HH:mm")
+        today1 = str(date.today())
+        today2 = event_begin.format("YYYY-MM-DD")
+        is_today = bool(today1 == today2)
         if event.all_day:   # "Heldag" if all day activity else print out start and end time of event
             time = "Heldag"
         else:
@@ -130,6 +133,7 @@ def cal_events():
 
         entries.append({    # Picks out event information from the ics file and adds it to the entries list
             "title": event.name[:20],
+            "today": is_today,
             "when": en_to_swe(event_end.humanize()),
             "time": time,
             "month": month_to_str(event.begin.datetime.month),
@@ -139,7 +143,7 @@ def cal_events():
 
     entries.sort(key=lambda item: item.get("timestamp"))    # Sorts calendar events chronological
 
-    return entries
+    return entries[:4]
 
 
 @route("/api/calendar")
