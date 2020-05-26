@@ -413,7 +413,7 @@ h1 {
 	position: absolute;
 	width:540px;
 	height:130px;
-	z-index: 3 !important;	
+	z-index: 9999999999999999999 !important;	
 }
 
 #InfoButton {
@@ -433,7 +433,6 @@ h1 {
 .modal {
 	display: none; 
 	position: absolute;
-	z-index: 3; 
 	padding: 10px;
 	bottom: 50%;
 	overflow: auto; 
