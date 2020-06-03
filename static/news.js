@@ -1,23 +1,22 @@
 // rss source
 const RSS_URL = `https://rss.aftonbladet.se/rss2/small/pages/sections/nyheter/`;
 
-
 $.ajax(RSS_URL, {
-  accepts: {
-    xml: "application/rss+xml"
-  },
-  dataType: "xml",
-  success: function (data) {
+	accepts: {
+		xml: "application/rss+xml"
+	},
+	dataType: "xml",
+	success: function(data) {
 
-    // creates a template and target elements
-    $(data)
-      .find("item")
-      .slice(-5)
-      .each(function Item() {
-        counter = 5
-        const el = $(this);
+		// creates a template and target elements
+		$(data)
+			.find("item")
+			.slice(-5)
+			.each(function Item() {
+				counter = 5
+				const el = $(this);
 
-        const template = `
+				const template = `
         <wraper>
               <header>
                 <a ="${el
@@ -35,8 +34,8 @@ $.ajax(RSS_URL, {
               </wraper>
         `;
 
-        // insert text as HTML
-        document.querySelector(".NewsFeed").insertAdjacentHTML("beforeend", template);
-      });
-}
+				// insert text as HTML
+				document.querySelector(".NewsFeed").insertAdjacentHTML("beforeend", template);
+			});
+	}
 });

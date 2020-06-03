@@ -2,7 +2,7 @@ body {
 	background-color: black;
 	color: white;
 	font-family: Arial, Helvetica, sans-serif;
-	overflow:hidden;
+	overflow: hidden;
 }
 
 #container {
@@ -15,7 +15,7 @@ body {
 	border-radius: 7px;
 	touch-action: none;
 	z-index: -10;
-	
+
 }
 
 .TimeDateWrapper {
@@ -23,7 +23,7 @@ body {
 	user-select: none !important;
 	position: absolute;
 	cursor: pointer;
-	top:0px;
+	top: 0px;
 	left: 0px;
 	width: 200px;
 	height: 120px;
@@ -31,11 +31,13 @@ body {
 
 .highlight {
 	border: 2px solid red !important;
-  }
-.Draggable{
+}
+
+.Draggable {
 	border: 2px dashed white;
 }
-.Draggable:hover{
+
+.Draggable:hover {
 	border: 2px solid white;
 }
 
@@ -67,10 +69,10 @@ body {
 	position: absolute;
 	cursor: pointer;
 	width: 540px;
-    height: 200px;
-    text-decoration: none;
-    overflow: hidden;
-    font-size: 14px;
+	height: 200px;
+	text-decoration: none;
+	overflow: hidden;
+	font-size: 14px;
 	font-weight: bold;
 	pointer-events: none;
 	user-select: none;
@@ -116,7 +118,7 @@ h1 {
 /* CalendarWidget: START */
 .CalendarWrapper {
 	background: black;
-	left:0px;
+	left: 0px;
 	top: 130px;
 	position: absolute;
 	cursor: pointer;
@@ -164,9 +166,9 @@ h1 {
 	margin-bottom: 10px;
 }
 
-.Event.today + .Event.tomorrow {
-    border-top: 1px solid white;
-    padding-top: 10px;
+.Event.today+.Event.tomorrow {
+	border-top: 1px solid white;
+	padding-top: 10px;
 }
 
 .EventIcon {
@@ -212,8 +214,8 @@ h1 {
 
 .WeatherWrapper {
 	background: black;
-	right:0px;
-	top:280px;
+	right: 0px;
+	top: 280px;
 	position: absolute;
 	height: 330px;
 	width: 270px;
@@ -236,7 +238,7 @@ h1 {
 
 #BigTemperature {
 	font-size: 79px;
-	
+
 	margin-right: 10px;
 	margin-top: 10px;
 }
@@ -293,135 +295,137 @@ h1 {
 /*Settings: START */
 
 /*show/hide menu START*/
-.Show{
+.Show {
 	border: 0;
-	background:black;
-	margin-top:43%;
+	background: black;
+	margin-top: 43%;
 	opacity: 10%;
 }
 
-.Show:hover{
+.Show:hover {
 	opacity: 100%;
-	cursor:pointer;
-}
-
-.Show:active {
-	position:relative;
-	top:1px;
-}
-
-.Up{
-	background-image:url(/static/SettingIcons/Circle_Arrow_Up.png);
-	width: 30px;
-	height: 30px;
-	display: block;	
-	margin-top:44%;
-}
-
-.Down{
-	background-image:url(/static/SettingIcons/circle_arrow_down.png);
-	width: 30px;
-	height: 30px;
-	display: block;
-	margin-top:44%;
-}
-
-.SettingsMenu{
-	position: absolute;
-	bottom:0px;
-	background:white;
-	color:black;
-	height: 50px;
-	width: 100%;
-}
-/*show/hide menu END*/
-
-/*Lock/unlock draggable elements START*/
-.LockDrag{
-	height:45px;
-	width:45px;
-	margin:2px 10px;
-}
-
-.LockOpen{
-	background-image:url(/static/SettingIcons/lock_open_icon.png);
-	height:45px;
-	width:45px;
-}
-
-.LockClosed{
-	background-image:url(/static/SettingIcons/lock_closed_icon.png);
-	height:45px;
-	width:45px;
-
-}
-
-.LockDrag:hover{
-	cursor:pointer;
-}
-
-.LockDrag:active{
-	position:relative;
-	top:1px;
-}
-/*Lock/unlock draggable elements END*/
-
-/*Show/hide Widgets START*/
-.HideWidgets{
-	width:45px;
-	height:45px;
-	position: absolute;
-	right:0px;
-	bottom: 0px;
-	margin:2px 10px;
 	cursor: pointer;
 }
 
-.HiddenWidget{
+.Show:active {
+	position: relative;
+	top: 1px;
+}
+
+.Up {
+	background-image: url(/static/SettingIcons/Circle_Arrow_Up.png);
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin-top: 44%;
+}
+
+.Down {
+	background-image: url(/static/SettingIcons/circle_arrow_down.png);
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin-top: 44%;
+}
+
+.SettingsMenu {
+	position: absolute;
+	bottom: 0px;
+	background: white;
+	color: black;
+	height: 50px;
+	width: 100%;
+}
+
+/*show/hide menu END*/
+
+/*Lock/unlock draggable elements START*/
+.LockDrag {
+	height: 45px;
+	width: 45px;
+	margin: 2px 10px;
+}
+
+.LockOpen {
+	background-image: url(/static/SettingIcons/lock_open_icon.png);
+	height: 45px;
+	width: 45px;
+}
+
+.LockClosed {
+	background-image: url(/static/SettingIcons/lock_closed_icon.png);
+	height: 45px;
+	width: 45px;
+
+}
+
+.LockDrag:hover {
+	cursor: pointer;
+}
+
+.LockDrag:active {
+	position: relative;
+	top: 1px;
+}
+
+/*Lock/unlock draggable elements END*/
+
+/*Show/hide Widgets START*/
+.HideWidgets {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin: 2px 10px;
+	cursor: pointer;
+}
+
+.HiddenWidget {
 	display: none;
 }
 
-.HideWidgets:active{
+.HideWidgets:active {
 	position: absolute;
-	right:0px;
-	bottom:-1px;
+	right: 0px;
+	bottom: -1px;
 }
 
-.OpenEye{
-	background-image:url(/static/SettingIcons/eyes_open_icon.png);
+.OpenEye {
+	background-image: url(/static/SettingIcons/eyes_open_icon.png);
 	position: absolute;
-	width:45px;
-	height:45px;
-	right:0px;
+	width: 45px;
+	height: 45px;
+	right: 0px;
 	bottom: 0px;
-	margin:2px 10px;
+	margin: 2px 10px;
 }
 
-.ClosedEye{
-	background-image:url(/static/SettingIcons/eyes_closed_icon.png);
+.ClosedEye {
+	background-image: url(/static/SettingIcons/eyes_closed_icon.png);
 	position: absolute;
-	width:45px;
-	height:45px;
-	right:0px;
+	width: 45px;
+	height: 45px;
+	right: 0px;
 	bottom: 0px;
-	margin:2px 10px;
+	margin: 2px 10px;
 }
 
 /*Show/hide Widgets END*/
 /*Settings: END */
 
 /* InfoButton: START */
-.InfoWrapper{
+.InfoWrapper {
 	position: absolute;
-	width:540px;
-	height:130px;
-	z-index: 9999999999999999999 !important;	
+	width: 540px;
+	height: 130px;
+	z-index: 9999999999999999999 !important;
 }
 
 #InfoButton {
 	position: absolute;
 	bottom: 1px;
-	background:white;
+	background: white;
 	border: none;
 	padding: 0px;
 	left: 50%;
@@ -435,11 +439,11 @@ h1 {
 }
 
 .modal {
-	display: none; 
+	display: none;
 	position: absolute;
 	padding: 10px;
 	bottom: 50%;
-	overflow: auto; 
+	overflow: auto;
 	background-color: rgb(66, 66, 66);
 	border-radius: 10px;
 	margin: 0px;
@@ -454,7 +458,7 @@ h1 {
 	-webkit-filter: grayscale(1) invert(1);
 	filter: grayscale(1) invert(1);
 	padding-right: 5px;
-}  
+}
 
 /* The Close Button */
 .close {
@@ -464,11 +468,12 @@ h1 {
 	font-weight: bold;
 	padding-left: 15px;
 }
-  
+
 .close:hover,
 .close:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
 }
+
 /* InfoButton: END */

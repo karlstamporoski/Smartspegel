@@ -40,10 +40,10 @@ Draggable.create(droppables, {
  * @param {*} overlapThreshold 
  * @param {*} pos 
  */
-function moveUntillOutside(dragged, dropped, overlapThreshold, pos){
-  if (Draggable.hitTest(dragged, dropped, overlapThreshold)){
-    TweenMax.to(dragged, 0.01, pos);
-  }
+function moveUntillOutside(dragged, dropped, overlapThreshold, pos) {
+	if (Draggable.hitTest(dragged, dropped, overlapThreshold)) {
+		TweenMax.to(dragged, 0.01, pos);
+	}
 }
 
 /**
@@ -84,13 +84,13 @@ function moveOtherDraggable(dragged, dropped, event) {
 			break;
 	}
 
-  /**
-   * Checks if element is still coliding
-   * Loops logic
-   */
-pos.onComplete = function(){
-  moveUntillOutside(dragged, dropped, overlapThreshold, pos);
-}
+	/**
+	 * Checks if element is still coliding
+	 * Loops logic
+	 */
+	pos.onComplete = function() {
+		moveUntillOutside(dragged, dropped, overlapThreshold, pos);
+	}
 
-  TweenMax.to(dragged, 0.01, pos);
+	TweenMax.to(dragged, 0.01, pos);
 }
