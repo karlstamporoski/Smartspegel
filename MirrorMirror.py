@@ -48,6 +48,7 @@ def en_to_swe(english):
     english = english.replace(" a ", " en ")
     english = english.replace("a ", "En ")
     english = english.replace("in", "Om")
+    english = english.replace("an", "En")
     english = english.replace("month", "månad")
     english = english.replace("weeks", "veckor")
     english = english.replace("week", "vecka")
@@ -55,6 +56,8 @@ def en_to_swe(english):
     english = english.replace("day", "dag")
     english = english.replace("ago", "sedan")
     english = english.replace("hours", "timmar")
+    english = english.replace("hour", "timme")
+    english = english.replace("minutes", "minuter")
 
     return english
 
@@ -123,10 +126,10 @@ def cal_events():
         event_end = event.end.to('local')
         start = event_begin.format("HH:mm")
         end = event_end.format("HH:mm")
-        today1 = str(date.today())
-        today2 = event_begin.format("YYYY-MM-DD")
-        is_today = bool(today1 == today2)
-        if event.all_day:   # "Heldag" if all day activity else print out start and end time of event
+        todays_date = str(date.today())
+        today_begins = event_begin.format("YYYY-MM-DD")
+        is_today = bool(todays_date == today_begins)
+        if event.all_day:       # "Heldag" if all day activity else print out start and end time of event
             time = "Heldag"
         else:
             time = f"{start} - {end}"
