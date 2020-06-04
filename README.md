@@ -1,7 +1,7 @@
 # Mirror Mirror
 Grupp 01
 
-# GitHub
+### GitHub
 https://github.com/karlstamporoski/Smartspegel
 
 #### Projekt Smart Spegel
