@@ -1,6 +1,9 @@
 # Mirror Mirror
 Grupp 01
 
+# GitHub
+https://github.com/karlstamporoski/Smartspegel
+
 #### Projekt Smart Spegel
 Medlemmar: Karl, Mattias, Josefine, Arian, Mohamud
 
