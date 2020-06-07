@@ -1,5 +1,5 @@
 // rss source
-const RSS_URL = `https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml`;
+const RSS_URL = `https://rss.aftonbladet.se/rss2/small/pages/sections/nyheter/`;
 
 $.ajax(RSS_URL, {
 	accepts: {
@@ -28,7 +28,8 @@ $.ajax(RSS_URL, {
                 <p ="${el
                     .find("link")
                     .text()}" target="_blank" rel="noopener">
-                    ${el.find("description").text()} 
+					${el.find("description").text()
+					.slice(2)}  
                 </p>
               </wraper>
         `;
