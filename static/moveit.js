@@ -5,7 +5,7 @@ var lastDragged;
 
 // Create Draggables with the hitTest()
 Draggable.create(droppables, {
-	bounds: container,
+	bounds: Container,
 	onDragStart: function(e) {
 		$(this.target).addClass("highlight");
 	},
